@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "moviesapp-68fda": {
+      "hosting": {
+        "moviesapp": [
+          "moviesapp-68fda"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "moviesapp-68fda"
+  }
+}
