@@ -1,0 +1,12 @@
+<h2>Page de Connexion</h2>
+<form (submit)="login(); $event.preventDefault()">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Entrez votre email" required />
+
+  <label for="password">Mot de passe:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Entrez votre mot de passe" required />
+
+  <button type="submit">Se connecter</button>
+
+  <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+</form>
