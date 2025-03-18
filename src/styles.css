@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --darkest: #88487A;
+    --dark: #CA4E96 ; 
+    --light : #E1CFDF ; 
+    --lightest : #F8EDF7; 
+}
+
+.playfair-display-font {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  .playfair-display-font-bold {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+  .alex-brush-regular {
+    font-family: "Alex Brush", cursive;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    
+}
+
+

@@ -5,7 +5,9 @@
 body{
     background-image: url(../../assets/images/background@4x.png);
     background-size: cover;  
-    background-repeat: no-repeat;
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
     display: flex;
     flex-direction : column; 
     align-items:center; 
@@ -16,7 +18,7 @@ body{
 h2{
     color : #88487A; 
     text-align: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -35,7 +37,6 @@ h2{
     display: flex;
     flex-direction : column;
     align-items: left;
-   
 }
 
 
@@ -94,6 +95,7 @@ button:hover{
     
 }
 
+
 /* Responsivité */
 @media (max-width: 500px){
     body{
@@ -103,4 +105,8 @@ button:hover{
         width: 100%;
         padding: 40px 20px;
     }
-}
+    .form-group2{
+        width:96%; 
+    }
+
+    }

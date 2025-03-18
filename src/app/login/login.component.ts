@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; 
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private auth: Auth, private router: Router) {} 
+  constructor(private auth: AngularFireAuth, private router: Router) {} 
 
   login() {
     if (!this.email || !this.password) {
@@ -20,15 +20,25 @@ export class LoginComponent {
       return;
     }
 
-    signInWithEmailAndPassword(this.auth, this.email, this.password)
+    this.auth.signInWithEmailAndPassword(this.email, this.password)
       .then((userCredential) => {
         console.log('Connexion réussie !', userCredential);
         this.errorMessage = ''; 
-        this.router.navigate(['/user']);
+        this.router.navigate(['/home']);
       })
       .catch((error) => {
         console.error('Erreur de connexion :', error);
-        this.errorMessage = 'Échec de la connexion : ' + error.message;
+        this.errorMessage = 'Échec de la connexion ' ;
+      });
+  }
+
+  forgotPassword() {
+    this.auth.sendPasswordResetEmail(this.email)
+      .then(() => {
+        alert('Un e-mail de réinitialisation du mot de passe a été envoyé à ' + this.email);
+      })
+      .catch((error) => {
+        this.errorMessage = 'Veuillez entrer un email et un mot de passe.';
       });
   }
 }

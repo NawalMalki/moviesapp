@@ -1,27 +1,31 @@
-import { Component } from '@angular/core';
-import { Auth, signOut, User } from '@angular/fire/auth';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  user: User | null = null;
+export class HomeComponent implements OnInit {
 
-  constructor(private auth: Auth, private router: Router) {
-    this.auth.onAuthStateChanged((user) => {
+  user: firebase.User | null = null;
+
+  constructor(private auth: AngularFireAuth, private router: Router) {}
+
+  ngOnInit() {
+    this.auth.authState.subscribe(user => {
       this.user = user;
+      if (!user) {
+        this.router.navigate(['/login']);
+      }
     });
   }
 
   logout() {
-    signOut(this.auth).then(() => {
+    this.auth.signOut().then(() => {
       this.router.navigate(['/login']); // Redirige vers la page de connexion après déconnexion
     });
   }
-
 }
-
-
