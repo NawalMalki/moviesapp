@@ -1,0 +1,80 @@
+.loading {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .manga-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .manga-card {
+    background: #f8e8f2;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 180px;
+    text-align: center;
+  }
+  
+  .manga-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .manga-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .manga-info h3 {
+    font-family: "Alex Brush", cursive;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .rating {
+    margin-top: 8px;
+    color: gold;
+    font-size: 16px;
+  }
+  
+  .favorite {
+    margin-top: 6px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .favorite span {
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  
+  .favorite span.filled {
+    color: #e91e63;
+  }
+  
+  .rating-fav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .rating .star {
+    color: gold;
+    font-size: 16px;
+  }
+  .no-style-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  
+  

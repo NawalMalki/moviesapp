@@ -1,19 +1,22 @@
 <div class="container">
-        <h2 class="alex-brush-regular">Centre de divertissement</h2>
-    
-        <nav class="alex-brush-regular">
-            <div class="nav-wrapper">
-                <a href="#">Films</a>
-                <a href="#">Animes</a>
-                <a href="#">Manga</a>
-                <a href="#">Films Ghibli</a>
-                <a href="#">Musique</a>
-            </div>
-        </nav>
-    
-        <div class="categories"></div>
-        <div class="profile" routerLink="/profile">
-                <i class="fas fa-user"></i>
+    <h2 class="alex-brush-regular">Centre de divertissement</h2>
+
+    <nav class="alex-brush-regular">
+        <div class="nav-wrapper">
+            <a href="#">Films</a>
+            <a (click)="showCategory('animes')">Animes</a>
+            <a  (click)="showCategory('mangas')">Manga</a>
+            <a href="#">Films Ghibli</a>
+            <a href="#">Musique</a>
         </div>
+    </nav>
+
+    <div class="categories">
+        <app-manga-list *ngIf="selectedCategory === 'mangas'"></app-manga-list>
+        
+        <app-anime-list *ngIf="selectedCategory === 'animes'"></app-anime-list>
     </div>
-    
+    <div class="profile" routerLink="/profile">
+            <i class="fas fa-user"></i>
+    </div>
+</div>

@@ -13,6 +13,12 @@ export class HomeComponent implements OnInit {
   user: firebase.User | null = null;
 
   constructor(private auth: AngularFireAuth, private router: Router) {}
+  selectedCategory: string = '';
+
+  showCategory(category: string) {
+    // console.log('Catégorie sélectionnée :', category);
+    this.selectedCategory = category;
+  }
 
   ngOnInit() {
     this.auth.authState.subscribe(user => {

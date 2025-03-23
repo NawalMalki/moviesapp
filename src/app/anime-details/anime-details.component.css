@@ -1,0 +1,83 @@
+.details-container {
+    padding: 30px;
+    background-color: #fdf0f5;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .back-button {
+    background-color: #a36e94;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .details-card {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .left {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .left img {
+    width: 200px;
+    border-radius: 15px;
+  }
+  
+  .stars {
+    margin-top: 10px;
+    font-size: 20px;
+    color: gold;
+  }
+  
+  .right {
+    flex: 2;
+    padding-right: 10px;
+    overflow-y: auto;
+  }
+  
+  .right h2 {
+    font-family: 'Alex Brush', cursive;
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #a04682;
+  }
+  
+  .right h4 {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .right p {
+    margin: 5px 0;
+    font-size: 15px;
+  }
+  
+  .right h3 {
+    color: #a04682;
+    margin-top: 20px;
+    font-family: 'Alex Brush', cursive;
+  }
+  
+  .synopsis {
+    margin-top: 10px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  

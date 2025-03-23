@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 // Firebase - Compat API
 import { AngularFireModule } from '@angular/fire/compat';
@@ -16,6 +17,10 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MangaListComponent } from './manga-list/manga-list.component';
+import { AnimeListComponent } from './anime-list/anime-list.component';
+import { MangaDetailsComponent } from './manga-details/manga-details.component';
+import { AnimeDetailsComponent } from './anime-details/anime-details.component';
 
 // Define routes directly in this file
 const routes: Routes = [
@@ -41,7 +46,11 @@ const firebaseConfig = {
     HomeComponent,
     RegisterComponent,
     MotdepasseoublieComponent,
-    ProfileComponent
+    ProfileComponent,
+    MangaListComponent,
+    AnimeListComponent,
+    MangaDetailsComponent,
+    AnimeDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +59,8 @@ const firebaseConfig = {
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
