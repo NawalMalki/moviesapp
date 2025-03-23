@@ -1,0 +1,109 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.film-card {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.film-card:hover {
+  transform: scale(1.05);
+}
+
+.film-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.film-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.star {
+  color: gold;
+  font-size: 20px;
+}
+
+/* Bouton du cœur aligné à droite */
+.heart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cœur avec ombrage et effet réaliste */
+.heart {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+/* Contour du cœur */
+.heart-outline {
+  fill: none;
+  stroke: #ff4f8b; /* Rose dynamique */
+  stroke-width: 2;
+  transition: stroke 0.3s ease-in-out;
+}
+
+/* Remplissage du cœur avec dégradé réaliste */
+.heart-fill {
+  fill: url(#gradient); /* Dégradé pour un effet de remplissage progressif */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  transform: scale(1);
+}
+
+/* Animation du cœur rempli */
+.filled {
+  opacity: 1;
+  animation: pulse 0.5s ease-out, glow 1.2s ease-out;
+}
+
+/* Effet de pulsation doux */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Glow autour du cœur pour un effet de brillance */
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 5px rgba(255, 79, 139, 0.5)); }
+  50% { filter: drop-shadow(0 0 10px rgba(255, 79, 139, 0.7)); }
+  100% { filter: drop-shadow(0 0 5px rgba(255, 79, 139, 0.5)); }
+}
+
+/* Dégradé pour le remplissage du cœur (simule un remplissage dynamique) */
+svg {
+  position: relative;
+  z-index: 1;
+}
+
+

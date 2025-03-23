@@ -1,0 +1,57 @@
+<div class="film-details" *ngIf="filmData">
+  <button (click)="goBack()" class="back-button">Retour</button>
+
+  <div class="film-container">
+    <div class="film-left">
+      <img [src]="filmData.image" alt="{{ filmData.title }}" class="film-image" />
+
+      <div class="film-rating">
+        <span *ngFor="let star of getStars(filmData.rt_score)" class="star">{{ star }}</span>
+        <!--<span class="score-text">{{ filmData.rt_score }} / 100</span>-->
+      </div>
+    </div>
+
+    <div class="film-right">
+      <h1>{{ filmData.title }} ({{ filmData.release_date }})</h1>
+      <h2>{{ filmData.original_title }} ({{ filmData.original_title_romanised }})</h2>
+
+      <!-- Bannière du film -->
+      <!--<img *ngIf="filmData.movie_banner" [src]="filmData.movie_banner" alt="{{ filmData.title }} Banner" class="film-banner" />-->
+
+      <!-- Informations de base -->
+      <div class="film-info">
+        <p><strong>Director:</strong> {{ filmData.director }}</p>
+        <p><strong>Producer:</strong> {{ filmData.producer }}</p>
+        <p><strong>Running Time:</strong> {{ filmData.running_time }} minutes</p>
+        <p><strong>Release Date:</strong> {{ filmData.release_date }}</p>
+      </div>
+
+      <!-- Description du film -->
+      <div class="film-description">
+        <h3>Description</h3>
+        <p>{{ filmData.description }}</p>
+      </div>
+
+      <!-- Détails supplémentaires -->
+      <!--<div class="film-extras">
+        <h3>Détails supplémentaires</h3>
+        <p><strong>Personnages:</strong></p>
+        <ul>
+          <li *ngFor="let person of filmData.people">{{ person }}</li>
+        </ul>
+        <p><strong>Espèces:</strong></p>
+        <ul>
+          <li *ngFor="let specie of filmData.species">{{ specie }}</li>
+        </ul>
+        <p><strong>Lieux:</strong></p>
+        <ul>
+          <li *ngFor="let location of filmData.locations">{{ location }}</li>
+        </ul>
+        <p><strong>Véhicules:</strong></p>
+        <ul>
+          <li *ngFor="let vehicle of filmData.vehicles">{{ vehicle }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>-->
+</div>
