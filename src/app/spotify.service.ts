@@ -10,7 +10,7 @@ import { YouTubeService } from './youtube.service';  // Importation du service Y
 })
 export class SpotifyService {
   private apiUrl = 'https://api.spotify.com/v1';
-  private token = 'BQBa3HY9nFQMxd-6NiHBmy0JVslsnacydsNteolXaI-AfcEuJkr1pvTcLWGAogHDBI5Zus6TvcfKJJEDF6VZ9aGtPVc3mfjCZWt7VNhSjcMu4osD5GlHwIOXVjtFuxOyJ_3gQbk8NAw'; // Remplace par ton token d'accès
+  private token = 'BQDSao-dpbiRkmn3nwbXL9SVArpXOMGqosDhC5iVzj83SIq54BQr0HaBpl4ojFWEyLtT3MFG16uF6QELM2xmedjNlxHZjnn0oQv7g4EW5a1u8t-ydhj2p9Wvjr83PQ6FwsnvYcT7Z-Y'; 
 
   constructor(private http: HttpClient,private youtubeService: YouTubeService) {}
 
@@ -43,9 +43,10 @@ export class SpotifyService {
       map(response => response.albums)
     );
   }
- // Fonction pour récupérer la prévisualisation de la chanson en utilisant YouTube Music
- getTrackPreview(songName: string): Observable<string> {
-  return this.youtubeService.searchSongOnYouTube(songName);
+  
+// Fonction pour récupérer la prévisualisation de la chanson en utilisant YouTube Music
+getTrackPreview(songName: string, artistName: string): Observable<string> {
+  return this.youtubeService.searchSongOnYouTube(songName, artistName);
 }
 
 getAlbumTracks(albumId: string): Observable<Track[]> {
@@ -53,16 +54,18 @@ getAlbumTracks(albumId: string): Observable<Track[]> {
     headers: new HttpHeaders({ 'Authorization': `Bearer ${this.token}` })
   }).pipe(
     switchMap(response => {
-      // Récupérer toutes les pistes
+     
       const tracks = response.items;
+      console.log(tracks)
 
-      // Créer un tableau d'observables pour récupérer les URLs de prévisualisation
+     
       const trackPreviews = tracks.map(track =>
-        this.getTrackPreview(track.name).pipe(
+        this.getTrackPreview(track.name, track.artists[0]?.name).pipe(
+
           map(previewUrl => {
-            // Mettre à jour l'URL de prévisualisation de la piste
+           
             track.preview_url = previewUrl;
-            return this.mapTrack(track); // Appliquer la transformation
+            return this.mapTrack(track); 
           })
         )
       );

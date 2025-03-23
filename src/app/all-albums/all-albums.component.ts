@@ -17,6 +17,7 @@ export class AllAlbumsComponent implements OnInit {
   currentTrack: Track | null = null;
   isPlaying: boolean = false;
   audio: HTMLAudioElement = new Audio();
+ 
 
   constructor(
     private route: ActivatedRoute,
@@ -48,6 +49,7 @@ export class AllAlbumsComponent implements OnInit {
   showAlbumDetails(album: any) {
     this.selectedAlbum = album;
     this.spotifyService.getAlbumTracks(album.id).subscribe((tracks) => {
+      console.log(tracks)
       this.albumTracks = tracks;
     });
   }
@@ -62,10 +64,26 @@ export class AllAlbumsComponent implements OnInit {
     window.open(track.external_urls.spotify, '_blank');
   }
 
-  openYouTube(track: Track) {
-    // Créer une recherche YouTube avec l'artiste et le titre
-    const searchQuery = encodeURIComponent(`${track.artists[0]?.name} ${track.name}`);
-    const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${searchQuery}`;
-    window.open(youtubeSearchUrl, '_blank');
+
+  selectedTrack: any = null;
+
+  playVideo(track: any) {
+    this.selectedTrack = track;
+    this.isPlaying = true;
+  }
+  
+  getSafeVideoUrl(url: string): SafeResourceUrl {
+    // Si l'URL est une URL YouTube directe (comme https://www.youtube.com/watch?v=VIDEO_ID)
+    // vous devez la convertir en format d'intégration
+    if (url.includes('youtube.com/watch')) {
+      const videoId = new URL(url).searchParams.get('v');
+      url = `https://www.youtube.com/embed/${videoId}`;
+    } else if (url.includes('youtu.be')) {
+      // Si c'est un lien court YouTube (comme https://youtu.be/VIDEO_ID)
+      const videoId = url.split('/').pop();
+      url = `https://www.youtube.com/embed/${videoId}`;
+    }
+    
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }

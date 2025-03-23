@@ -1,4 +1,4 @@
-<div class="all-albums-container">
+<div class="all-albums-container" [ngClass]="{'blurred': selectedAlbum}">
     <h2>All {{ genre }} Albums</h2>
     <div class="skills-container">
       <div class="skill-card" *ngFor="let album of allAlbums" (click)="showAlbumDetails(album)">
@@ -23,18 +23,43 @@
       </div>
     </div>
     <div class="tracks-list">
-      <h4>Tracks</h4>
-      <div class="track-item" *ngFor="let track of albumTracks">
-        <span>{{ track.track_number }}. {{ track.name }}</span>
-        
-        <button (click)="openYouTube(track)">Écouter sur YouTube</button>
+        <h4>Tracks</h4>
+        <div class="track-item" *ngFor="let track of albumTracks">
+          <div class="track-card">
+            <span class="track-number">{{ track.track_number }}.</span>
+            <span class="track-name">{{ track.name }}</span>
+            <span class="track-duration">{{ (track.duration_ms / 60000) | number:'1.2-2' }} </span>
+            <a [href]="track.external_urls.spotify" target="_blank" class="spotify-link">
+              <img src="../../assets/images/spotify.png" alt="Spotify" class="spotify-logo" />
+            </a>
 
-
-  
-        <!-- Lien vers Spotify -->
-        <button (click)="openTrackOnSpotify(track)">Open on Spotify</button>
+            <div class="video-player">
+                <div class="video-thumbnail" (click)="playVideo(track)">
+                  <img src="../../assets/images/eye.png" alt="watch" class="spotify-logo" />
+                </div>
+              </div>
+              
+          </div>
+        </div>
       </div>
-    </div>
     <button class="close-btn" (click)="closeAlbumDetails()">Close</button>
+  </div>
+
+  <!-- Ajoutez ceci après la div de album-details -->
+<div class="video-modal" *ngIf="isPlaying && selectedTrack && selectedTrack.preview_url">
+    <div class="modal-header">
+      <h3>{{ selectedTrack.name }}</h3>
+      <button class="close-video-btn" (click)="isPlaying = false">×</button>
+    </div>
+    <div class="modal-content">
+      <iframe
+        width="100%"
+        height="400"
+        [src]="getSafeVideoUrl(selectedTrack.preview_url!)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
   
