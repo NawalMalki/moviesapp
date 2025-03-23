@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // Firebase - Compat API
 import { AngularFireModule } from '@angular/fire/compat';
@@ -16,6 +16,10 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SongComponent } from './song/song.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AllAlbumsComponent } from './all-albums/all-albums.component';
+
 
 // Define routes directly in this file
 const routes: Routes = [
@@ -41,16 +45,20 @@ const firebaseConfig = {
     HomeComponent,
     RegisterComponent,
     MotdepasseoublieComponent,
-    ProfileComponent
+    ProfileComponent,
+    SongComponent,
+    AllAlbumsComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule  // Ajoute HttpClientModule ici
   ],
   providers: [],
   bootstrap: [AppComponent]

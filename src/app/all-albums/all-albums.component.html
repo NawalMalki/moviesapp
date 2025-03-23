@@ -1,0 +1,40 @@
+<div class="all-albums-container">
+    <h2>All {{ genre }} Albums</h2>
+    <div class="skills-container">
+      <div class="skill-card" *ngFor="let album of allAlbums" (click)="showAlbumDetails(album)">
+        <div class="logo-container">
+          <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+        </div>
+        <span class="tool-name">{{ album.name }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="album-details" *ngIf="selectedAlbum">
+    <div class="album-info">
+      <div class="album-image">
+        <img [src]="selectedAlbum.images[0]?.url" alt="{{ selectedAlbum.name }}" />
+      </div>
+      <div class="album-data">
+        <h3>{{ selectedAlbum.name }}</h3>
+        <p>Artiste : {{ selectedAlbum.artists[0]?.name }}</p>
+        <p>Date de sortie : {{ selectedAlbum.release_date }}</p>
+        <p>Total Tracks : {{ selectedAlbum.total_tracks }}</p>
+      </div>
+    </div>
+    <div class="tracks-list">
+      <h4>Tracks</h4>
+      <div class="track-item" *ngFor="let track of albumTracks">
+        <span>{{ track.track_number }}. {{ track.name }}</span>
+        
+        <button (click)="openYouTube(track)">Écouter sur YouTube</button>
+
+
+  
+        <!-- Lien vers Spotify -->
+        <button (click)="openTrackOnSpotify(track)">Open on Spotify</button>
+      </div>
+    </div>
+    <button class="close-btn" (click)="closeAlbumDetails()">Close</button>
+  </div>
+  

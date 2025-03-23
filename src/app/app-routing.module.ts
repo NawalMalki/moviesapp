@@ -5,6 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.component';
+import { SongComponent } from './song/song.component'
+import { AllAlbumsComponent } from './all-albums/all-albums.component';
+ 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -12,7 +15,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'motdepasseoublie', component: MotdepasseoublieComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/register', pathMatch: 'full' } // Redirection vers /register par défaut
+  { path: 'song', component: SongComponent },
+  { path: '', redirectTo: '/register', pathMatch: 'full' } ,
+  { path: 'all-albums/:genre', component: AllAlbumsComponent },
+  
 ];
 
 @NgModule({

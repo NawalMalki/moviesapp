@@ -1,0 +1,63 @@
+<div class="main_Container">
+  <div class="Skill">All Albums</div>
+
+  
+  <div class="more">
+    <div class="Skill">Albums France</div>
+    <button (click)="showAllAlbums('france')">Watch More</button>
+  
+  </div>
+ 
+<section class="skills">
+  <div class="skills-container">
+    <!-- Limiter l'affichage à 7 albums -->
+    <div class="skill-card" *ngFor="let album of albumsFrance | slice:0:7">
+      <div class="logo-container">
+        <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+      </div>
+      <span class="tool-name">{{ album.name }}</span>
+    </div>
+  </div>
+ 
+</section>
+
+<div class="more">
+  <div class="Skill">Albums K-pop</div>
+  <button (click)="showAllAlbums('kpop')">Watch More</button>
+
+</div>
+
+  <section class="skills">
+    <div class="skills-container">
+      <div class="skill-card" *ngFor="let album of albumsKpop | slice:0:7">
+        <div class="logo-container">
+          <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+        </div>
+        <span class="tool-name">{{ album.name }}</span>
+      </div>
+    </div>
+    
+    
+  </section> 
+
+
+  
+<div class="more">
+    <div class="Skill">Albums Spain</div>
+    <button (click)="showAllAlbums('spain')">Watch More</button>
+  
+  </div>
+ 
+<section class="skills">
+  <div class="skills-container">
+    
+    <div class="skill-card" *ngFor="let album of albumsSpanish| slice:0:7">
+      <div class="logo-container">
+        <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+      </div>
+      <span class="tool-name">{{ album.name }}</span>
+    </div>
+  </div>
+ 
+</section> 
+</div>
