@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AnimeService {
+export class MyAnimeService {
   private apiUrl = 'https://api.jikan.moe/v4/anime';
 
   constructor(private http: HttpClient) {}

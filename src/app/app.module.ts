@@ -20,7 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MangaListComponent } from './manga-list/manga-list.component';
 import { AnimeListComponent } from './anime-list/anime-list.component';
 import { MangaDetailsComponent } from './manga-details/manga-details.component';
-import { AnimeDetailsComponent } from './anime-details/anime-details.component';
+import { AnimeListDetailsComponent } from './anime-list-details/anime-list-details.component';
 
 // Define routes directly in this file
 const routes: Routes = [
@@ -50,7 +50,7 @@ const firebaseConfig = {
     MangaListComponent,
     AnimeListComponent,
     MangaDetailsComponent,
-    AnimeDetailsComponent
+    AnimeListDetailsComponent
   ],
   imports: [
     BrowserModule,

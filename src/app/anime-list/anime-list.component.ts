@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimeService } from '../services/anime.service';
+import { MyAnimeService } from '../services/my-anime.service';
+
 
 @Component({
   selector: 'app-anime-list',
@@ -11,7 +12,7 @@ export class AnimeListComponent implements OnInit {
   favorites: any[] = [];
   loading = true;
 
-  constructor(private animeService: AnimeService) {}
+  constructor(private animeService: MyAnimeService) {}
 
   ngOnInit(): void {
     this.animeService.getTopAnimes().subscribe({
