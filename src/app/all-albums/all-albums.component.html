@@ -1,0 +1,65 @@
+<div class="all-albums-container" [ngClass]="{'blurred': selectedAlbum}">
+    <h2 class="alex-brush-regular">All {{ genre }} Albums</h2>
+    <div class="skills-container">
+      <div class="skill-card" *ngFor="let album of allAlbums" (click)="showAlbumDetails(album)">
+        <div class="logo-container">
+          <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+        </div>
+        <span class="tool-name playfair-display-font">{{ album.name }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="album-details" *ngIf="selectedAlbum">
+    <div class="album-info">
+      <div class="album-image">
+        <img [src]="selectedAlbum.images[0]?.url" alt="{{ selectedAlbum.name }}" />
+      </div>
+      <div class="album-data">
+        <h3 class="playfair-display-font">{{ selectedAlbum.name }}</h3>
+        <p class="playfair-display-font">Artiste : {{ selectedAlbum.artists[0]?.name }}</p>
+        <p class="playfair-display-font">Date de sortie : {{ selectedAlbum.release_date }}</p>
+        <p class="playfair-display-font">Total Tracks : {{ selectedAlbum.total_tracks }}</p>
+      </div>
+    </div>
+    <div class="tracks-list">
+        <h2 class="alex-brush-regular">Tracks</h2>
+        <div class="track-item" *ngFor="let track of albumTracks">
+          <div class="track-card">
+            <span class="track-number playfair-display-font">{{ track.track_number }}.</span>
+            <span class="track-name playfair-display-font">{{ track.name }}</span>
+            <span class="track-duration playfair-display-font">{{ (track.duration_ms / 60000) | number:'1.2-2' }} </span>
+            <a [href]="track.external_urls.spotify" target="_blank" class="spotify-link">
+              <img src="../../assets/images/spotify.png" alt="Spotify" class="spotify-logo" />
+            </a>
+
+            <div class="video-player">
+                <div class="video-thumbnail" (click)="playVideo(track)">
+                  <img src="../../assets/images/eye.png" alt="watch" class="spotify-logo" />
+                </div>
+              </div>
+              
+          </div>
+        </div>
+      </div>
+    <button class="close-btn" (click)="closeAlbumDetails()">Close</button>
+  </div>
+
+  <!-- Ajoutez ceci après la div de album-details -->
+<div class="video-modal" *ngIf="isPlaying && selectedTrack && selectedTrack.preview_url">
+    <div class="modal-header">
+      <h3 class="alex-brush-regular heading">{{ selectedTrack.name }}</h3>
+      <button class="close-video-btn" (click)="isPlaying = false">×</button>
+    </div>
+    <div class="modal-content">
+      <iframe
+        width="100%"
+        height="400"
+        [src]="getSafeVideoUrl(selectedTrack.preview_url!)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  

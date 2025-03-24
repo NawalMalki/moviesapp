@@ -1,0 +1,57 @@
+.container {
+    padding: 20px;
+    text-align: center;
+    margin: 60px;
+  
+}
+
+h1, h2{
+  color: var(--darkest);
+}
+.film-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .film-card {
+    cursor: pointer;
+    border: 1px solid var(--dark);
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.2s;
+    background-color: var(--lightest);
+    box-shadow: 0 4px 5px var(--lightest);
+  }
+  
+  .film-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .film-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  
+
+  .back-button {
+    align-self: flex-start;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: var(--darkest);
+    color: var(--lightest);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: var(--dark);
+    color: var(--lightest);
+  }

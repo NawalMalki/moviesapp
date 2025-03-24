@@ -1,42 +1,11 @@
-<!-- <div class="container">
-
-  <h1>Studio Ghibli Films</h1>
-  <div class="film-grid">
-    <div *ngFor="let film of films" class="film-card" (click)="viewFilmDetails(film.id)">
-      <img [src]="film.image" alt="{{ film.title }}" class="film-image" />
-      <h2>{{ film.title }} ({{ film.release_date }})</h2>
-      <div class="film-rating">
-        <span *ngFor="let star of getStars(film.rt_score)" class="star">{{ star }}</span>
-        <button class="heart-button" (click)="toggleFavori(film)">
-           {{ estFavori(film) ? 'Retirer' : 'Ajouter' }}
-        </button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- <div class="container">
-  <h1>Studio Ghibli Films</h1>
-  <div class="film-grid">
-    <div *ngFor="let film of films" class="film-card" (click)="viewFilmDetails(film.id)">
-      <img [src]="film.image" alt="{{ film.title }}" class="film-image" />
-      <h2>{{ film.title }} ({{ film.release_date }})</h2>
-      <div class="film-rating">
-        <span *ngFor="let star of getStars(film.rt_score)" class="star">{{ star }}</span>
-        <button class="heart-button" (click)="toggleFavori(film); $event.stopPropagation()">
-          <span class="heart-icon" [ngClass]="{'filled': estFavori(film)}"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div> -->
+<body>
 
 <div class="container">
-  <h1>Studio Ghibli Films</h1>
+  <h1 class="alex-brush-regular">Studio Ghibli Films</h1>
   <div class="film-grid">
     <div *ngFor="let film of films" class="film-card" (click)="viewFilmDetails(film.id)">
       <img [src]="film.image" alt="{{ film.title }}" class="film-image" />
-      <h2>{{ film.title }} ({{ film.release_date }})</h2>
+      <h2 class="heading alex-brush-regular">{{ film.title }} ({{ film.release_date }})</h2>
       <div class="film-rating">
         <span *ngFor="let star of getStars(film.rt_score)" class="star">{{ star }}</span>
         
@@ -66,3 +35,4 @@
 </div>
 
 
+</body>

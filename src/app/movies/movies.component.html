@@ -1,0 +1,34 @@
+<div class="main-container">
+  <h1 class="alex-brush-regular">Popular movies</h1>
+<div class="movies-container">
+    <div *ngFor="let movie of movies" class="movie-card" (click)="showMovieDetails(movie.id)">
+      <img class="movie-image"   [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" [alt]="movie.title">
+      <h2 class="heading alex-brush-regular">{{ movie.title }}</h2>
+      <p class="playfair-display-font">{{ movie.overview }}</p>
+      <span>⭐ {{ movie.vote_average }}/10</span>
+    </div>
+  </div>
+
+</div>
+  
+  
+
+  <!-- Card de détails du film -->
+  <div *ngIf="selectedMovie" class="movie-details-overlay">
+    <h2 class="movie-title">{{ selectedMovie.title }}</h2>
+
+    <!-- <p class="movie-genres"><strong>Genres:</strong> {{ selectedMovie.genres?.map(g => g.name).join(', ') }}</p> -->
+    <p class="movie-vote"><strong>Vote:</strong> ⭐ {{ selectedMovie.vote_average }}/10</p>
+    <p class="movie-synopsis"><strong>Synopsis:</strong> {{ selectedMovie.overview }}</p>
+    
+    <div *ngIf="trailerUrl" class="movie-trailer">
+     
+      <iframe class="trailer-iframe" [src]="trailerUrl | safeUrl" frameborder="0" allow="autoplay; fullscreen" autoplay="true"></iframe>
+    </div>
+    
+    <button (click)="closeMovieDetails()" class="close-button">Close</button>
+  </div>
+  
+  
+  
+  

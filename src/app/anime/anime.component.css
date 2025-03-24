@@ -1,21 +1,31 @@
+
 .container {
   padding: 20px;
   text-align: center;
+  margin: 60px;
+  
 }
 
 .film-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
+h1 , .heading{
+  color: var(--darkest);
+}
+
 .film-card {
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid var(--dark);
   border-radius: 10px;
   padding: 10px;
   transition: transform 0.2s;
+  background-color: var(--lightest);
+  box-shadow: 0 4px 5px var(--lightest);
 }
 
 .film-card:hover {
@@ -32,12 +42,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-content: center;
   margin-top: 10px;
+  
 }
 
 .star {
   color: gold;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 /* Bouton du cœur aligné à droite */
@@ -45,12 +57,12 @@
   background: none;
   border: none;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
+  margin-left: 70px;
   position: relative;
   z-index: 1;
 }
@@ -107,3 +119,10 @@ svg {
 }
 
 
+/* Responsivité */
+@media (min-width: 600px){
+  .film-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    
+  }
+}

@@ -1,11 +1,11 @@
 .film-details {
+  margin: 80px auto;
   padding: 20px;
   max-width: 800px; 
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+  background: var(--lightest);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -15,10 +15,12 @@
 }
 
 .back-button {
+  align-self: flex-start;
+  margin-left: 25px;
   margin-bottom: 20px;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--darkest);
+  color: var(--lightest);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -26,11 +28,13 @@
 }
 
 .back-button:hover {
-  background-color: #0056b3;
+  background-color: var(--dark);
+  color: var(--lightest);
 }
 
 .film-container {
   display: flex;
+  flex-direction: row;
   width: 100%;
   gap: 20px;
   height: 100%; 
@@ -38,6 +42,7 @@
 
 
 .film-left {
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -47,7 +52,7 @@
 
 .film-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
@@ -66,7 +71,7 @@
 
 .star {
   color: gold;
-  font-size: 20px; 
+  font-size: 30px; 
 }
 
 .score-text {
@@ -75,6 +80,7 @@
 }
 
 .film-right {
+  height: 70vh;
   flex: 1;
   padding: 20px;
   background: rgba(255, 255, 255, 0.8); 
@@ -85,19 +91,25 @@
 }
 
 h1, h2 {
-  color: #000; 
   margin: 0;
+  text-align: center;
 }
 
 h1 {
+  color : var(--dark);
   font-size: 24px; 
   margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 18px; 
-  color: #333; 
+  color: var(--darkest); 
+  font-size: 18px;  
   margin-bottom: 15px;
+}
+
+
+.film-info{
+  text-align: center;
 }
 
 .film-info p {
@@ -107,7 +119,7 @@ h2 {
 }
 
 .film-info strong {
-  color: #007bff; 
+  color: var(--darkest); 
 }
 
 .film-description {
@@ -115,8 +127,8 @@ h2 {
 }
 
 .film-description h3 {
-  color: #000; 
-  font-size: 18px; 
+  color: var(--dark); 
+  font-size: 25px; 
   margin-bottom: 10px;
 }
 
@@ -124,4 +136,24 @@ h2 {
   color: #333; 
   font-size: 14px; 
   line-height: 1.5; 
+}
+
+/* Responsivité */
+@media(max-width:900px){
+  .film-details{
+    margin:20px; 
+  }
+}
+@media(max-width:600px){
+  .film-details{
+    height: auto;
+    margin: 20px;
+  }
+  .film-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    height: 100%; 
+  }
 }

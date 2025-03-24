@@ -1,0 +1,63 @@
+<div class="main_Container">
+  <div class="Skill alex-brush-regular">All Albums</div>
+
+  
+  <div class="more">
+    <div class="Skill alex-brush-regular">Albums France</div>
+    <button (click)="showAllAlbums('france')">See More</button>
+  
+  </div>
+ 
+
+  <div class="skills-container">
+    <!-- Limiter l'affichage à 7 albums -->
+    <div class="skill-card" *ngFor="let album of albumsFrance | slice:0:8">
+      <div class="logo-container">
+        <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+      </div>
+      <h2 class="tool-name playfair-display-font">{{ album.name }}</h2>
+    </div>
+  </div>
+ 
+
+
+<div class="more">
+  <div class="Skill alex-brush-regular">Albums K-pop</div>
+  <button (click)="showAllAlbums('kpop')">See More</button>
+
+</div>
+
+
+    <div class="skills-container">
+      <div class="skill-card" *ngFor="let album of albumsKpop | slice:0:8">
+        <div class="logo-container">
+          <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+        </div>
+        <h2 class="tool-name playfair-display-font">{{ album.name }}</h2>
+      </div>
+    </div>
+    
+    
+
+
+
+  
+<div class="more">
+    <div class="Skill alex-brush-regular">Albums Spain</div>
+    <button (click)="showAllAlbums('spain')">See More</button>
+  
+  </div>
+ 
+
+  <div class="skills-container">
+    
+    <div class="skill-card" *ngFor="let album of albumsSpanish| slice:0:8">
+      <div class="logo-container">
+        <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+      </div>
+      <h2 class="tool-name playfair-display-font">{{ album.name }}</h2>
+    </div>
+  </div>
+ 
+
+</div>

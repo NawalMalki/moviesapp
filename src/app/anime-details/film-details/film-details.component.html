@@ -12,8 +12,8 @@
     </div>
 
     <div class="film-right">
-      <h1>{{ filmData.title }} ({{ filmData.release_date }})</h1>
-      <h2>{{ filmData.original_title }} ({{ filmData.original_title_romanised }})</h2>
+      <h1 class="alex-brush-regular">{{ filmData.title }} ({{ filmData.release_date }})</h1>
+      <h2 class="alex-brush-regular">{{ filmData.original_title }} ({{ filmData.original_title_romanised }})</h2>
 
       <!-- Bannière du film -->
       <!--<img *ngIf="filmData.movie_banner" [src]="filmData.movie_banner" alt="{{ filmData.title }} Banner" class="film-banner" />-->
@@ -28,7 +28,7 @@
 
       <!-- Description du film -->
       <div class="film-description">
-        <h3>Description</h3>
+        <h3 class="alex-brush-regular">Description</h3>
         <p>{{ filmData.description }}</p>
       </div>
 

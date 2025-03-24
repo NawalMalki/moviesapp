@@ -10,16 +10,16 @@ body {
     border-radius: 25px;
     height: fit-content;
     display: inline-flex;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--dark);
     backdrop-filter: blur(10px);
     align-items: center;
-    padding: 0 10px;
-    margin: 50px 0 0 0;
+    padding: 0 20px;
+    margin: 20px 0 0 0;
   }
   
   .menu-bar li {
+   
     list-style: none;
-    color: white;
     font-family: sans-serif;
     font-weight: bold;
     padding: 12px 16px;
@@ -27,6 +27,13 @@ body {
     position: relative;
     cursor: pointer;
     white-space: nowrap;
+  }
+
+
+  .menu-bar li a {
+    color: var(--lightest);
+    text-decoration: none;
+    font-size: 20px;
   }
   
   .menu-bar li::before {
@@ -42,12 +49,13 @@ body {
   }
   
   .menu-bar li:hover::before {
-    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-    box-shadow: 0px 3px 20px 0px black;
+    background: var(--lightest);
+    box-shadow: 0px 3px 20px 0px var(--dark);
     transform: scale(1.2);
+    color: var(--darkest);
   }
   
-  .menu-bar li:hover {
-    color: black;
+  .menu-bar li a:hover {
+    color: var(--darkest);
   }
   

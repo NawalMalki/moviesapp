@@ -4,6 +4,7 @@ import { Film } from '../models';
 import { ApiService } from '../api.service';
 
 
+
 @Component({
   selector: 'app-anime',
   templateUrl: './anime.component.html',
@@ -27,8 +28,14 @@ export class AnimeComponent implements OnInit {
   }
 
 
+// viewFilmDetails(id: string): void {
+//   console.log('Navigating to film with ID:', id);
+//   this.router.navigate(['/film', id]);
+// }
 viewFilmDetails(id: string): void {
-  this.router.navigate(['/film', id]);
+  console.log('Navigating to film with ID:', id);
+  // Try this instead of the array syntax
+  this.router.navigateByUrl(`/film/${id}`);
 }
 
 getStars(score: string): string[] {
