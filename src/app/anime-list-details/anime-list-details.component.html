@@ -1,0 +1,28 @@
+<div class="details-container">
+    <button class="back-button" routerLink="/home">Retour</button>
+  
+    <div class="details-card" *ngIf="!loading && anime">
+      <div class="left">
+        <img [src]="anime.images.jpg.image_url" [alt]="anime.title" />
+        <div class="stars">
+          <ng-container *ngFor="let star of getStars(anime.score)">
+            <span class="star">★</span>
+          </ng-container>
+        </div>
+      </div>
+  
+      <div class="right">
+        <h2>{{ anime.title }} <span *ngIf="anime.year">({{ anime.year }})</span></h2>
+        <h4 *ngIf="anime.title_japanese"><i>{{ anime.title_japanese }}</i></h4>
+  
+        <p><strong>Director:</strong> {{ anime.directors?.[0]?.name || 'N/A' }}</p>
+        <p><strong>Episodes:</strong> {{ anime.episodes || 'N/A' }}</p>
+        <p><strong>Status:</strong> {{ anime.status || 'N/A' }}</p>
+        <p><strong>Duration:</strong> {{ anime.duration || 'N/A' }}</p>
+  
+        <h3>Description</h3>
+        <p class="synopsis">{{ anime.synopsis }}</p>
+      </div>
+    </div>
+  </div>
+  

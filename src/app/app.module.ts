@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-//ce que jajoute 
+//ce que j ajoute 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AnimeComponent } from './anime/anime.component';
@@ -27,6 +27,10 @@ import { AllAlbumsComponent } from './all-albums/all-albums.component';
 import { SongComponent } from './song/song.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { AnimeListComponent } from './anime-list/anime-list.component';
+import { AnimeListDetailsComponent } from './anime-list-details/anime-list-details.component';
+import { MangaListComponent } from './manga-list/manga-list.component';
+import { MangaDetailsComponent } from './manga-details/manga-details.component';
 
 
 
@@ -73,7 +77,11 @@ const firebaseConfig = {
     AllAlbumsComponent,
     SongComponent,
     MoviesComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    AnimeListComponent,
+    AnimeListDetailsComponent,
+    MangaListComponent,
+    MangaDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+<div class="details-container">
+    <button class="back-button" routerLink="/home">Retour</button>
+  
+    <div class="details-card">
+      <div class="left">
+        <img [src]="manga.images.jpg.image_url" [alt]="manga.title" />
+        <div class="stars">
+          <ng-container *ngFor="let star of getStars(manga.score)">
+            <span class="star">★</span>
+          </ng-container>
+        </div>
+      </div>
+  
+      <div class="right">
+        <h2>{{ manga.title }} <span *ngIf="manga.published?.prop?.from?.year">({{ manga.published.prop.from.year }})</span></h2>
+  
+        <h4 *ngIf="manga.title_japanese"><i>{{ manga.title_japanese }}</i></h4>
+  
+        <p><strong>Author:</strong> {{ manga.authors?.[0]?.name || 'N/A' }}</p>
+        <p><strong>Chapters:</strong> {{ manga.chapters || 'N/A' }}</p>
+        <p><strong>Volumes:</strong> {{ manga.volumes || 'N/A' }}</p>
+        <p><strong>Status:</strong> {{ manga.status }}</p>
+        <h3>Description</h3>
+        <p class="synopsis">{{ manga.synopsis }}</p>
+      </div>
+    </div>
+  </div>
+  

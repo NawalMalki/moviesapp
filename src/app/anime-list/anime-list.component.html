@@ -1,0 +1,28 @@
+<div *ngIf="loading" class="loading alex-brush-regular">Chargement des animes...</div>
+<div class="container">
+<a *ngFor="let anime of animes" [routerLink]="['/anime', anime.mal_id]" class="no-style-link">
+  <h1 class="alex-brush-regular">Animes</h1>
+    <div class="manga-grid" *ngIf="!loading">
+        <div class="manga-card" *ngFor="let anime of animes">
+          <img [src]="anime.images.jpg.image_url" [alt]="anime.title" class="manga-image" />
+      
+          <div class="manga-info">
+            <h3 class="heading alex-brush-regular">{{ anime.title }} ({{ anime.year || 'N/A' }})</h3>
+          </div>
+      
+          <div class="rating-fav">
+            <div class="rating">
+              <ng-container *ngFor="let star of getStars(anime.score)">
+                <span class="star">★</span>
+              </ng-container>
+            </div>
+      
+            <div class="favorite" (click)="toggleFavorite(anime)">
+              <span [class.filled]="isFavorite(anime)">♥</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</a>
+</div>
