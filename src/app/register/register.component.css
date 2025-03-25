@@ -1,0 +1,112 @@
+
+
+
+
+body{
+    background-image: url(../../assets/images/background@4x.png);
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction : column; 
+    align-items:center; 
+    padding : 100px ; 
+    min-height: 100vh;
+}
+
+h2{
+    color : #88487A; 
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+.container{
+    background: var(--lightest);
+    width: 50%;
+    height : 80%; 
+    padding : 40px ;
+    border-radius : 20px ; 
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+
+.form-group{
+    display: flex;
+    flex-direction : column;
+    align-items: left;
+}
+
+
+.form-control{
+    padding:15px ; 
+    margin : 10px ; 
+    border : 1px solid #CA4E96 ; 
+    border-radius : 20px ; 
+}
+
+.form-group2{
+    
+    display: flex;
+    flex-direction : column;
+    align-items: left;
+    align-items: center;
+}
+
+button{
+    background-color : #88487A ; 
+    color : #F8EDF7 ; 
+    border:none ; 
+    padding : 12px ; 
+    border-radius: 10px ; 
+    margin : 12px ; 
+    width : 70% ; 
+}
+
+
+button:hover{
+    color : #CA4E96 ; 
+    background-color : #E1CFDF ; 
+    cursor: pointer;
+    
+    
+}
+
+
+.messageErreur{
+    background-color: rgba(255, 0, 0, 0.3);
+    color : red;
+    padding : 15px ; 
+
+}
+
+.link{
+    background: none;
+    color: var(--dark); 
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.link:hover{
+    background-color: none;
+    color: var(--darkest); 
+    
+}
+
+
+/* Responsivité */
+@media (max-width: 500px){
+    body{
+        padding:55px; 
+    }
+    .container{
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .form-group2{
+        width:96%; 
+    }
+
+    }

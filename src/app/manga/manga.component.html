@@ -1,0 +1,25 @@
+<div class="manga-container">
+    <h2>Liste des Mangas</h2>
+  
+    <!-- Affiche un message d'erreur si nécessaire -->
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Affiche les mangas -->
+    <div class="manga-list">
+      <div *ngFor="let manga of mangas" class="manga-card">
+        <!-- Affiche la couverture si disponible -->
+        <img
+          *ngIf="manga.relationships"
+          [src]="getCoverUrl(manga)"
+          alt="{{ manga.attributes.title.en || 'Manga Cover' }}"
+          class="manga-cover"
+        />
+        <!-- Affiche le titre -->
+        <h3>{{ manga.attributes.title.en || 'Titre indisponible' }}</h3>
+        <!-- Affiche une description (si disponible) -->
+        <p>{{ manga.attributes.description?.en || 'Aucune description' }}</p>
+      </div>
+    </div>
+  </div>
