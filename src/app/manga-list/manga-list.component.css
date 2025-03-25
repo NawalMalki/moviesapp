@@ -33,6 +33,8 @@ h1 , .heading{
     transition: transform 0.3s;
     width: 180px;
     text-align: center;
+    border: 1px solid var(--dark);
+  border-radius: 10px;
   }
   
   .manga-card:hover {
