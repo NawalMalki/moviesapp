@@ -16,29 +16,35 @@ export class LoginComponent {
 
   login() {
     if (!this.email || !this.password) {
-      this.errorMessage = 'Veuillez entrer un email et un mot de passe.';
+      this.errorMessage = 'Please enter an email and a password.';
       return;
     }
 
     this.auth.signInWithEmailAndPassword(this.email, this.password)
       .then((userCredential) => {
-        console.log('Connexion réussie !', userCredential);
+        console.log('Login successful!', userCredential);
         this.errorMessage = ''; 
         this.router.navigate(['/home']);
       })
       .catch((error) => {
-        console.error('Erreur de connexion :', error);
-        this.errorMessage = 'Échec de la connexion ' ;
+        console.error('Login error:', error);
+        this.errorMessage = 'Login failed. Please check your credentials and try again.';
       });
   }
 
   forgotPassword() {
+    if (!this.email) {
+      this.errorMessage = 'Please enter your email to reset your password.';
+      return;
+    }
+
     this.auth.sendPasswordResetEmail(this.email)
       .then(() => {
-        alert('Un e-mail de réinitialisation du mot de passe a été envoyé à ' + this.email);
+        alert('A password reset email has been sent to ' + this.email);
       })
       .catch((error) => {
-        this.errorMessage = 'Veuillez entrer un email et un mot de passe.';
+        console.error('Password reset error:', error);
+        this.errorMessage = 'An error occurred while sending the reset email. Please try again.';
       });
   }
 }
