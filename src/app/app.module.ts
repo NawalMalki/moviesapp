@@ -31,6 +31,7 @@ import { AnimeListComponent } from './anime-list/anime-list.component';
 import { AnimeListDetailsComponent } from './anime-list-details/anime-list-details.component';
 import { MangaListComponent } from './manga-list/manga-list.component';
 import { MangaDetailsComponent } from './manga-details/manga-details.component';
+import { NavbarDiffCssComponent } from './navbar-diff-css/navbar-diff-css.component';
 
 
 
@@ -81,7 +82,8 @@ const firebaseConfig = {
     AnimeListComponent,
     AnimeListDetailsComponent,
     MangaListComponent,
-    MangaDetailsComponent
+    MangaDetailsComponent,
+    NavbarDiffCssComponent
   ],
   imports: [
     BrowserModule,

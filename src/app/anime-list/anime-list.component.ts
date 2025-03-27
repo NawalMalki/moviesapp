@@ -26,10 +26,12 @@ export class AnimeListComponent implements OnInit {
     });
   }
 
-  getStars(score: number): number[] {
-    const stars = Math.round(score / 2);
-    return Array(stars).fill(0);
+  getStars(score: number): string[] {
+    const starsCount = Math.floor(score / 20);
+    return Array(starsCount).fill('★');
   }
+  
+  
 
   toggleFavorite(anime: any): void {
     const index = this.favorites.findIndex(f => f.mal_id === anime.mal_id);

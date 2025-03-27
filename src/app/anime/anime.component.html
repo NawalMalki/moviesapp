@@ -1,6 +1,7 @@
 <body>
 
 <div class="container">
+  <app-navbar-diff-css></app-navbar-diff-css>
   <h1 class="alex-brush-regular">Studio Ghibli Films</h1>
   <div class="film-grid">
     <div *ngFor="let film of films" class="film-card" (click)="viewFilmDetails(film.id)">
