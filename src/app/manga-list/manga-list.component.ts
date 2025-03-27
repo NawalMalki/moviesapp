@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MangaService } from '../services/manga.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-manga-list',
@@ -11,7 +12,7 @@ export class MangaListComponent implements OnInit {
   favorites: any[] = [];
   loading = true;
 
-  constructor(private mangaService: MangaService) {}
+  constructor(private mangaService: MangaService,private router: Router) {}
 
   ngOnInit(): void {
     this.mangaService.getTopManga().subscribe({
@@ -25,10 +26,14 @@ export class MangaListComponent implements OnInit {
     });
   }
 
-  getStars(score: number): number[] {
-    const stars = Math.round(score / 2); // score /10 → 5 étoiles
-    return Array(stars).fill(0);
+  
+  getStarsArray(score: number): { full: number, half: boolean } {
+    const scaled = score / 2; // Score /10 → note sur 5
+    const full = Math.floor(scaled);
+    const half = scaled - full >= 0.25 && scaled - full < 0.75;
+    return { full, half };
   }
+  
 
   toggleFavorite(manga: any): void {
     const index = this.favorites.findIndex(f => f.mal_id === manga.mal_id);
@@ -42,4 +47,9 @@ export class MangaListComponent implements OnInit {
   isFavorite(manga: any): boolean {
     return this.favorites.some(f => f.mal_id === manga.mal_id);
   }
+
+  viewMangaDetails(id: number): void {
+    this.router.navigate(['/manga', id]);
+  }
+
 }
