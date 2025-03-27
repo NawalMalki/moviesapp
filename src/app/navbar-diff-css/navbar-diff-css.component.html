@@ -1,10 +1,19 @@
-<ul class="menu-bar alex-brush-regular">
-    <li ><a class="alex-brush-regular" routerLink="/home">Home</a></li>
-    <li ><a class="alex-brush-regular" routerLink="/movies">Films</a></li>
-    <li ><a class="alex-brush-regular" routerLink="/anime-actual">Anime</a></li>
-    <li ><a class="alex-brush-regular" routerLink="/manga">Mangas</a></li>
-    <li ><a class="alex-brush-regular" routerLink="/anime">Films Ghibli</a></li>
-    <li ><a class="alex-brush-regular" routerLink="/song">Music</a></li>
-    <li ><a class="alex-brush-regular" routerLink="/favoris">Favories</a></li>
-  </ul>
+<ul class="menu-bar alex-brush-regular" [class.active]="isMenuOpen">
+  <li><a class="alex-brush-regular" routerLink="/home">Home</a></li>
+  <li><a class="alex-brush-regular" routerLink="/movies">Films</a></li>
+  <li><a class="alex-brush-regular" routerLink="/anime-actual">Anime</a></li>
+  <li><a class="alex-brush-regular" routerLink="/manga">Mangas</a></li>
+  <li><a class="alex-brush-regular" routerLink="/anime">Films Ghibli</a></li>
+  <li><a class="alex-brush-regular" routerLink="/song">Music</a></li>
+  <li><a class="alex-brush-regular" routerLink="/favoris">Favorites</a></li>
   
+</ul>
+
+<div class="menu-toggle" (click)="toggleMenu($event)">
+  <div *ngIf="!isMenuOpen" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+</div>

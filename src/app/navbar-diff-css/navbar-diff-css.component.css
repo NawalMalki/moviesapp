@@ -1,62 +1,152 @@
+
 body {
-    background: url("https://hdqwalls.com/download/stranger-things-season-3-2019-4k-5k-38-1920x1080.jpg") center / cover no-repeat;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  background: url("https://hdqwalls.com/download/stranger-things-season-3-2019-4k-5k-38-1920x1080.jpg") center / cover no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-bar {
+  border-radius: 25px;
+  height: fit-content;
+  display: inline-flex;
+  background-color: var(--dark);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 20px;
+  margin: -5px 0 0 0;
+}
+
+.menu-bar li {
+  list-style: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.menu-bar li a {
+  color: var(--lightest);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.menu-bar li::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.2s;
+  border-radius: 25px;
+}
+
+.menu-bar li:hover::before {
+  background: var(--lightest);
+  box-shadow: 0px 3px 20px 0px var(--dark);
+  transform: scale(1.2);
+  color: var(--darkest);
+}
+
+.menu-bar li a:hover {
+  color: var(--darkest);
+}
+
+
+
+
+.menu-toggle {
+  display: none;
+  border-radius:50%; 
+    background: rgb(95, 47, 93) ; 
+    color:var(--lightest); 
+  cursor: pointer;
+  position: absolute;
+  top:88px ; 
+  right : 10px;
+  width: 50px;
+  height: 50px;
+
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18px;
+  width: 24px;
+  position: absolute;
+  
+}
+
+.hamburger span {
+  display: block;
+  position: relative;
+  top: 80%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
+  background-color: var(--lightest);
+  border-radius: 3px;
+}
+
+.close-icon {
+  font-size: 24px;
+  color: var(--lightest);
+}
+
+/* Media query pour les petits écrans */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-bar li a {
+    font-size: 23px;
+    text-align: center;
   }
   
+
   .menu-bar {
-    border-radius: 25px;
-    height: fit-content;
-    display: inline-flex;
-    background-color: var(--dark);
-    backdrop-filter: blur(10px);
-    align-items: center;
-    padding: 0 20px;
-    margin: 0px 0 20px 0;
-    box-shadow: 2px 2px 10px rgba(120, 110, 110, 0.458);
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0px;
   }
   
   .menu-bar li {
-   
-    list-style: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    padding: 12px 16px;
-    margin: 0 8px;
-    position: relative;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-
-
-  .menu-bar li a {
-    color: var(--lightest);
-    text-decoration: none;
-    font-size: 20px;
+    display: none;
   }
   
-  .menu-bar li::before {
-    content: " ";
-    position: absolute;
+  .menu-bar.active {
+    position: fixed;
     top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    transition: 0.2s;
-    border-radius: 25px;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    margin: 0;
+    border-radius: 0;
+    
   }
   
-  .menu-bar li:hover::before {
-    background: var(--lightest);
-    box-shadow: 0px 3px 20px 0px var(--dark);
-    transform: scale(1.2);
-    color: var(--darkest);
+  .menu-bar.active li {
+    display: block;
+    margin: 15px 0;
+    width: 80%;
   }
   
-  .menu-bar li a:hover {
-    color: var(--darkest);
+  .close-icon {
+    position: fixed;
+    top: 0;
+    right: 20px;
   }
-  
+}
