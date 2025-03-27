@@ -46,11 +46,13 @@ h1 , .heading{
   justify-content: center;
   margin-top: 10px;
   
+  
 }
 
 .star {
   color: gold;
   font-size: 30px;
+ 
 }
 
 /* Bouton du cœur aligné à droite */
@@ -63,7 +65,7 @@ h1 , .heading{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 70px;
+  margin-left: 10px;
   position: relative;
   z-index: 1;
 }

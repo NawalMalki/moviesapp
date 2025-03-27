@@ -63,7 +63,7 @@ h1 , .heading{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 70px;
+  margin-left: 10px;
   position: relative;
   z-index: 1;
 }

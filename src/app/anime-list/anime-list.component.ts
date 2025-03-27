@@ -26,10 +26,13 @@ export class AnimeListComponent implements OnInit {
     });
   }
 
-  getStars(score: number): string[] {
-    const starsCount = Math.floor(score / 20);
-    return Array(starsCount).fill('★');
+  getStarsArray(score: number): { full: number, half: boolean } {
+    const scaled = score / 2; // Score /10 → note sur 5
+    const full = Math.floor(scaled);
+    const half = scaled - full >= 0.25 && scaled - full < 0.75;
+    return { full, half };
   }
+  
   
   
 

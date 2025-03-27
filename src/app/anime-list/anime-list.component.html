@@ -7,8 +7,14 @@
       <div *ngFor="let anime of animes" class="film-card" (click)="viewAnimeDetails(anime.mal_id)">
         <img [src]="anime.images.jpg.image_url" alt="{{ anime.title }}" class="film-image" />
         <h2 class="heading alex-brush-regular">{{ anime.title }} ({{ anime.year || 'N/A'}})</h2>
-        <div class="film-rating">
-          <span *ngFor="let star of getStars(anime.score)" class="star">{{ star }}</span>
+        <div class="film-rating" *ngIf="anime.score">
+                <!-- Étoiles pleines -->
+          <ng-container *ngFor="let _ of [].constructor(getStarsArray(anime.score).full)">
+            <span class="star">★</span>
+          </ng-container>
+
+          <!-- Étoile demi -->
+          <span *ngIf="getStarsArray(anime.score).half" class="star">☆</span>
           
           <!-- Cœur animé aligné à droite des étoiles -->
           <button class="heart-button" (click)="toggleFavorite(anime); $event.stopPropagation()">
