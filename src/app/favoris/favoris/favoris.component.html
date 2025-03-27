@@ -1,0 +1,11 @@
+<div class="container">
+    <h1 class="alex-brush-regular">Mes Favoris</h1>
+    <div class="film-grid">
+      <div *ngFor="let film of favoris" class="film-card">
+        <img [src]="film.image" alt="{{ film.title }}" class="film-image" />
+        <h2 class="alex-brush-regular">{{ film.title }} ({{ film.release_date }})</h2>
+        <button class="back-button" (click)="supprimerFavori(film)">❌ Retirer</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,25 +1,41 @@
-<div *ngIf="loading" class="loading">Chargement des animes...</div>
-<a *ngFor="let anime of animes" [routerLink]="['/anime', anime.mal_id]" class="no-style-link">
-    <div class="manga-grid" *ngIf="!loading">
-        <div class="manga-card" *ngFor="let anime of animes">
-          <img [src]="anime.images.jpg.image_url" [alt]="anime.title" class="manga-image" />
-      
-          <div class="manga-info">
-            <h3>{{ anime.title }} ({{ anime.year || 'N/A' }})</h3>
+
+<div class="container">
+  <app-navbar-diff-css></app-navbar-diff-css>
+  <h1 class="alex-brush-regular">Animes</h1>
+  <div class="manga-grid" *ngIf="!loading">
+    <a *ngFor="let anime of animes" [routerLink]="['/anime', anime.mal_id]" class="no-style-link">
+      <div class="manga-card">
+        <img [src]="anime.images.jpg.image_url" [alt]="anime.title" class="manga-image" />
+          <h3 class="heading alex-brush-regular">{{ anime.title }} ({{ anime.year || 'N/A' }})</h3>
+
+          <div class="film-rating">
+            <span *ngFor="let star of getStars(anime.score)" class="star">{{ star }}</span>
+            
+            <!-- Cœur animé aligné à droite des étoiles -->
+            <button class="heart-button" (click)="toggleFavorite(anime); $event.stopPropagation()">
+              <svg class="heart" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color: #ff4f8b; stop-opacity: 1" />
+                    <stop offset="100%" style="stop-color: #ff7f99; stop-opacity: 1" />
+                  </linearGradient>
+                </defs>
+                <path
+                  class="heart-outline"
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+                <path
+                  class="heart-fill"
+                  [ngClass]="{'filled': isFavorite(anime)}"
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </button>
           </div>
-      
-          <div class="rating-fav">
-            <div class="rating">
-              <ng-container *ngFor="let star of getStars(anime.score)">
-                <span class="star">★</span>
-              </ng-container>
-            </div>
-      
-            <div class="favorite" (click)="toggleFavorite(anime)">
-              <span [class.filled]="isFavorite(anime)">♥</span>
-            </div>
-          </div>
-        </div>
+          
+    
+        
       </div>
-      
-</a>
+    </a>
+  </div>
+</div>

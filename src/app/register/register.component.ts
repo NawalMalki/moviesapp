@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth'; // Pour l'authentification Firebase
-import { Router } from '@angular/router'; // Pour naviguer après l'inscription
-import { GoogleAuthProvider } from 'firebase/auth';  // Ajoute cette ligne
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 @Component({
   selector: 'app-register',
@@ -18,8 +18,16 @@ export class RegisterComponent {
   confirmation: string = '';
   errorMessage: string = '';
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(
+    private afAuth: AngularFireAuth, 
+    private router: Router, 
+    private db: AngularFirestore
+  ) {}
 
+
+  navigateToLogin() {
+    this.router.navigate(['login']);
+  }
   async register() {
     if (this.password !== this.confirmation) {
       this.errorMessage = "Les mots de passe ne correspondent pas.";
@@ -28,24 +36,35 @@ export class RegisterComponent {
 
     try {
       const userCredential = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
-      this.router.navigate(['/login']);
+      const user = userCredential.user;
+
+      if (user) {
+        await this.db.collection('users').doc(user.uid).set({
+          nom: this.nom,
+          prenom: this.prenom,
+          email: this.email
+        });
+
+        console.log("Utilisateur enregistrÃ© avec succÃ¨s !");
+        this.router.navigate(['/login']);
+      }
     } catch (error: any) {
-      this.errorMessage = 'Veuillez entrer un email et un mot de passe.';
+      console.error("Erreur lors de l'inscription :", error);
+      this.errorMessage = error.message;
     }
   }
 
-
-  // Méthode de connexion avec Google
   googleLogin() {
     const provider = new GoogleAuthProvider();
     this.afAuth.signInWithPopup(provider)
       .then((result) => {
-        console.log("Connexion Google réussie");
-        this.errorMessage = '';  // Réinitialiser le message d'erreur
+        console.log("Connexion Google rÃ©ussie");
+        this.errorMessage = '';  // RÃ©initialiser le message d'erreur
       })
       .catch((error) => {
         this.errorMessage = error.message;
         console.error(error.message);
       });
   }
+  
 }

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { MyAnimeService } from './my-anime.service';
 
-describe('AnimeService', () => {
+describe('MyAnimeService', () => {
   let service: MyAnimeService;
 
   beforeEach(() => {

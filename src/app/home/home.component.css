@@ -52,7 +52,7 @@ a:hover{
 .profile{
     position: absolute;
     border-radius:50%; 
-    background: var(--darkest);
+    background: rgb(95, 47, 93);
     color:var(--lightest); 
     cursor: pointer;
     top:30px ; 
@@ -68,6 +68,128 @@ a:hover{
     top:18px ; 
     left : 18px;
 }
+
+/* Profile */
+
+/* Profile Sidebar */
+.profile-sidebar {
+    position: fixed;
+    top: 15%;
+    right: 360px; 
+    width: 300px; 
+    max-width: 90%; 
+    height: 50%;
+    border-radius: 20px;
+    background: rgb(95, 47, 93);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
+}
+
+
+.profile-sidebar.ng-animating,
+.profile-sidebar.ng-trigger {
+    transform: translateX(0); 
+}
+
+.profile-sidebar h3 {
+    color: var(--lightest);
+    margin-top: 20px;
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.profile-sidebar p {
+    font-size: 15px;
+    color: var(--lightest);
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+.profile-actions {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    gap: 15px;
+}
+
+.profile-actions button {
+    width: 100%; /* Full width on mobile */
+    max-width: 300px;
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--lightest);
+    color: var(--dark);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.profile-actions button:hover {
+    box-shadow: 0px 3px 20px 0px var(--dark);
+    transform: translateY(-2px);
+}
+
+.profile-actions button:active {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--lightest);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivité */
+@media (max-width: 500px) {
+    .profile-sidebar {
+        width: 320px; /* Smaller width on mobile */
+    }
+    
+    .profile-sidebar h3 {
+        font-size: 20px;
+    }
+    
+    .profile-sidebar p {
+        font-size: 14px;
+    }
+    
+    .profile-actions button {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+
+
+
 
 /* Responsivité */
 @media (max-width: 500px) {
@@ -97,5 +219,10 @@ a:hover{
         color: var(--lightest);
         top:14px ; 
         left : 14px;
+    }
+
+    .profile-sidebar{
+        right: 210px !important;
+        width: 35%;
     }
 }

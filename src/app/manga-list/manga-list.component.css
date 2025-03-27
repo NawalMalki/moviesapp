@@ -1,9 +1,22 @@
+.container {
+  padding: 20px;
+  text-align: center;
+  margin-top : 30px;
+  margin-inline: 60px;
+  
+}
+
+h1 , .heading{
+  color: var(--darkest);
+}
+
+
 .loading {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 60px;
+}
   
   .manga-grid {
     display: flex;
@@ -21,6 +34,8 @@
     transition: transform 0.3s;
     width: 180px;
     text-align: center;
+    border: 1px solid var(--dark);
+  border-radius: 10px;
   }
   
   .manga-card:hover {

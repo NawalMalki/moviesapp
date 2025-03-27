@@ -1,0 +1,122 @@
+.main-container{
+  padding: 20px;
+  text-align: center;
+  margin: 60px;
+}
+
+
+h1 , .heading{
+  color: var(--darkest);
+}
+
+.movies-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  }
+  
+  .movie-card {
+    cursor: pointer;
+  border: 1px solid var(--dark);
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s;
+  background-color: var(--lightest);
+  box-shadow: 0 4px 5px var(--lightest);
+  
+  }
+
+  .movie-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+
+  .movie-card:hover{
+    transform: scale(1.05);
+  }
+  
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  
+    h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  
+    p {
+      font-size: 14px;
+      height: 60px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    span {
+      font-weight: bold;
+      display: block;
+      margin-top: 5px;
+    }
+  
+ 
+    .movie-details-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8); /* Transparent black background */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      z-index: 1000;
+      overflow: auto;
+    }
+    
+    .movie-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .movie-vote, .movie-synopsis {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+    
+    .movie-trailer {
+      width: 80%;
+      max-width: 800px;
+      margin: 20px 0;
+    }
+    
+    .trailer-iframe {
+      width: 100%;
+      height: 450px; /* Adjust the height to make it look more reasonable */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .close-button {
+      background-color: #e50914;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    
+    .close-button:hover {
+      background-color: #b20710;
+    }
+    

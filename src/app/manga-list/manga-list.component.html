@@ -1,26 +1,27 @@
-<div *ngIf="loading" class="loading">Chargement des mangas...</div>
-<a *ngFor="let manga of mangas" [routerLink]="['/manga', manga.mal_id]" class="no-style-link">
+<div class="container">
+  <app-navbar-diff-css></app-navbar-diff-css>
   <div class="manga-grid" *ngIf="!loading">
-    <div class="manga-card" *ngFor="let manga of mangas">
-      <img [src]="manga.images.jpg.image_url" [alt]="manga.title" class="manga-image" />
-  
-      <div class="manga-info">
-        <h3>{{ manga.title }} ({{ manga.published?.prop?.from?.year || 'N/A' }})</h3>
-      </div>
-  
-      <!-- Étoiles de note -->
-      <div class="rating-fav">
-        <div class="rating">
-          <ng-container *ngFor="let star of getStars(manga.score)">
-            <span class="star">★</span>
-          </ng-container>
+    <a *ngFor="let manga of mangas" [routerLink]="['/manga', manga.mal_id]" class="no-style-link">
+      <div class="manga-card">
+        <img [src]="manga.images.jpg.image_url" [alt]="manga.title" class="manga-image" />
+    
+        <div class="manga-info">
+          <h3 class="heading alex-brush-regular">{{ manga.title }} ({{ manga.published?.prop?.from?.year || 'N/A' }})</h3>
         </div>
-  
-        <div class="favorite" (click)="toggleFavorite(manga)">
-          <span [class.filled]="isFavorite(manga)">♥</span>
+    
+        <!-- Étoiles de note -->
+        <div class="rating-fav">
+          <div class="rating">
+            <ng-container *ngFor="let star of getStars(manga.score)">
+              <span class="star">★</span>
+            </ng-container>
+          </div>
+    
+          <div class="favorite" (click)="toggleFavorite(manga)">
+            <span [class.filled]="isFavorite(manga)">♥</span>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
-</a>
-
+</div>

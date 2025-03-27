@@ -10,11 +10,11 @@ export class MyAnimeService {
 
   constructor(private http: HttpClient) {}
   
-   // ✅ Récupérer un anime par ID
+   //  Récupérer un anime par ID
    getAnimeById(id: string | number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
-    // ✅ Récupérer les meilleurs animes
+    //  Récupérer les meilleurs animes
     getTopAnimes(): Observable<any> {
       return this.http.get<any>(`${this.apiUrl}?limit=20&order_by=score&sort=desc`);
     }

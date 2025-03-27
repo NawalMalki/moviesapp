@@ -1,0 +1,159 @@
+.film-details {
+  margin: 80px auto;
+  padding: 20px;
+  max-width: 800px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--lightest);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 90vh; 
+  overflow: hidden; 
+}
+
+.back-button {
+  align-self: flex-start;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: var(--darkest);
+  color: var(--lightest);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--dark);
+  color: var(--lightest);
+}
+
+.film-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  height: 100%; 
+}
+
+
+.film-left {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+.film-image {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.film-image:hover {
+  transform: scale(1.05);
+}
+
+.film-rating {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.star {
+  color: gold;
+  font-size: 30px; 
+}
+
+.score-text {
+  font-size: 16px;
+  color: #000; 
+}
+
+.film-right {
+  height: 70vh;
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); 
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  overflow-y: auto; 
+}
+
+h1, h2 {
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  color : var(--dark);
+  font-size: 24px; 
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: var(--darkest); 
+  font-size: 18px;  
+  margin-bottom: 15px;
+}
+
+
+.film-info{
+  text-align: center;
+}
+
+.film-info p {
+  margin: 8px 0; 
+  color: #000; 
+  font-size: 14px; 
+}
+
+.film-info strong {
+  color: var(--darkest); 
+}
+
+.film-description {
+  margin-top: 15px;
+}
+
+.film-description h3 {
+  color: var(--dark); 
+  font-size: 25px; 
+  margin-bottom: 10px;
+}
+
+.film-description p {
+  color: #333; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+/* Responsivité */
+@media(max-width:900px){
+  .film-details{
+    margin:20px; 
+  }
+}
+@media(max-width:600px){
+  .film-details{
+    height: auto;
+    margin: 20px;
+  }
+  .film-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    height: 100%; 
+  }
+}

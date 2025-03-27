@@ -10,7 +10,7 @@ export class MangaService {
 
   constructor(private http: HttpClient) {}
 
-   // ✅ Cette méthode est utilisée dans le composant
+   //  Cette méthode est utilisée dans le composant
    getTopManga(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}?limit=20&order_by=score&sort=desc`);
   }

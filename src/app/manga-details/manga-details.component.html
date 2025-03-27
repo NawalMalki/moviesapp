@@ -1,5 +1,5 @@
 <div class="details-container">
-    <button class="back-button" routerLink="/home">Retour</button>
+    <button class="back-button" routerLink="/manga">Retour</button>
   
     <div class="details-card">
       <div class="left">
@@ -10,7 +10,7 @@
           </ng-container>
         </div>
       </div>
-      
+  
       <div class="right">
         <h2>{{ manga.title }} <span *ngIf="manga.published?.prop?.from?.year">({{ manga.published.prop.from.year }})</span></h2>
   
