@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 //ce que j ajoute 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AnimeComponent } from './anime/anime.component';
 import { FilmDetailsComponent } from './anime-details/film-details/film-details.component';
+
+
+import { FormsModule } from '@angular/forms';
 
 
 // Firebase - Compat API
@@ -21,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.component';
+
 import { FavorisComponent } from './favoris/favoris/favoris.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { AllAlbumsComponent } from './all-albums/all-albums.component';
@@ -32,6 +35,10 @@ import { AnimeListDetailsComponent } from './anime-list-details/anime-list-detai
 import { MangaListComponent } from './manga-list/manga-list.component';
 import { MangaDetailsComponent } from './manga-details/manga-details.component';
 import { NavbarDiffCssComponent } from './navbar-diff-css/navbar-diff-css.component';
+
+
+
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -65,6 +72,7 @@ const firebaseConfig = {
     HomeComponent,
     RegisterComponent,
     MotdepasseoublieComponent,
+
     MoviesComponent,
     SafeUrlPipe,
     //chaima
@@ -83,9 +91,14 @@ const firebaseConfig = {
     AnimeListDetailsComponent,
     MangaListComponent,
     MangaDetailsComponent,
-    NavbarDiffCssComponent
+    NavbarDiffCssComponent,
+    ProfileComponent,
+    SongComponent,
+    AllAlbumsComponent
+
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -94,7 +107,8 @@ const firebaseConfig = {
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule  // Ajoute HttpClientModule ici
   ],
   providers: [],
   bootstrap: [AppComponent]
