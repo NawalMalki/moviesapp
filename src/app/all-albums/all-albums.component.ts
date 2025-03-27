@@ -86,8 +86,6 @@ export class AllAlbumsComponent implements OnInit {
     
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
+

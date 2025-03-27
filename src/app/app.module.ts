@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 //ce que j ajoute 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AnimeComponent } from './anime/anime.component';
 import { FilmDetailsComponent } from './anime-details/film-details/film-details.component';
 
-=======
+
 import { FormsModule } from '@angular/forms';
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
+
 
 // Firebase - Compat API
 import { AngularFireModule } from '@angular/fire/compat';
@@ -24,7 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.component';
-<<<<<<< HEAD
+
 import { FavorisComponent } from './favoris/favoris/favoris.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { AllAlbumsComponent } from './all-albums/all-albums.component';
@@ -38,12 +37,10 @@ import { MangaDetailsComponent } from './manga-details/manga-details.component';
 import { NavbarDiffCssComponent } from './navbar-diff-css/navbar-diff-css.component';
 
 
-=======
+
 import { ProfileComponent } from './profile/profile.component';
-import { SongComponent } from './song/song.component';
-import { HttpClientModule } from '@angular/common/http';
-import { AllAlbumsComponent } from './all-albums/all-albums.component';
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
+
+
 
 
 // Define routes directly in this file
@@ -75,7 +72,7 @@ const firebaseConfig = {
     HomeComponent,
     RegisterComponent,
     MotdepasseoublieComponent,
-<<<<<<< HEAD
+
     MoviesComponent,
     SafeUrlPipe,
     //chaima
@@ -94,12 +91,11 @@ const firebaseConfig = {
     AnimeListDetailsComponent,
     MangaListComponent,
     MangaDetailsComponent,
-    NavbarDiffCssComponent
-=======
+    NavbarDiffCssComponent,
     ProfileComponent,
     SongComponent,
     AllAlbumsComponent
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
+
   ],
   imports: [
     RouterModule,

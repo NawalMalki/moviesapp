@@ -1,7 +1,7 @@
 <div class="details-container" *ngIf="filmData">
   <button (click)="goBack()" class="back-button">Retour</button>
 
-  <div class="film-container">
+  <div class="film-container" *ngIf="filmData">
     <div class="film-left">
       <img [src]="filmData.image" alt="{{ filmData.title }}" class="film-image" />
 

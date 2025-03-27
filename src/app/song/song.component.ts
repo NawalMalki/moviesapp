@@ -61,8 +61,5 @@ export class SongComponent implements OnInit {
     this.router.navigate(['/all-albums', genre]);  // Naviguer vers la page avec l'argument genre
   }
   
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
+

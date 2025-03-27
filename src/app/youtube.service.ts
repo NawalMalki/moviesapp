@@ -8,11 +8,10 @@ import { map } from 'rxjs/operators';
 })
 export class YouTubeService {
   private apiUrl = 'https://www.googleapis.com/youtube/v3/search';
-<<<<<<< HEAD
-  private apiKey = 'AIzaSyByjdKMX9g9QxwxyI_tOiqdpwpRxdl7DZY'; 
-=======
+// <<<<<<< HEAD
+//   private apiKey = 'AIzaSyByjdKMX9g9QxwxyI_tOiqdpwpRxdl7DZY'; 
+
   private apiKey = 'AIzaSyDe4uzauU4x0UvgeX1wAj6VbaN6btS1xfk'; 
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
 
   constructor(private http: HttpClient) {}
 
@@ -32,8 +31,7 @@ export class YouTubeService {
       })
     );
   }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
+
+
