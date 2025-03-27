@@ -1,11 +1,19 @@
 <div class="all-albums-container" [ngClass]="{'blurred': selectedAlbum}">
+<<<<<<< HEAD
     <h2 class="alex-brush-regular">All {{ genre }} Albums</h2>
+=======
+    <h2>All {{ genre }} Albums</h2>
+>>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
     <div class="skills-container">
       <div class="skill-card" *ngFor="let album of allAlbums" (click)="showAlbumDetails(album)">
         <div class="logo-container">
           <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
         </div>
+<<<<<<< HEAD
         <span class="tool-name playfair-display-font">{{ album.name }}</span>
+=======
+        <span class="tool-name">{{ album.name }}</span>
+>>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
       </div>
     </div>
   </div>
@@ -16,6 +24,7 @@
         <img [src]="selectedAlbum.images[0]?.url" alt="{{ selectedAlbum.name }}" />
       </div>
       <div class="album-data">
+<<<<<<< HEAD
         <h3 class="playfair-display-font">{{ selectedAlbum.name }}</h3>
         <p class="playfair-display-font">Artiste : {{ selectedAlbum.artists[0]?.name }}</p>
         <p class="playfair-display-font">Date de sortie : {{ selectedAlbum.release_date }}</p>
@@ -29,6 +38,21 @@
             <span class="track-number playfair-display-font">{{ track.track_number }}.</span>
             <span class="track-name playfair-display-font">{{ track.name }}</span>
             <span class="track-duration playfair-display-font">{{ (track.duration_ms / 60000) | number:'1.2-2' }} </span>
+=======
+        <h3>{{ selectedAlbum.name }}</h3>
+        <p>Artiste : {{ selectedAlbum.artists[0]?.name }}</p>
+        <p>Date de sortie : {{ selectedAlbum.release_date }}</p>
+        <p>Total Tracks : {{ selectedAlbum.total_tracks }}</p>
+      </div>
+    </div>
+    <div class="tracks-list">
+        <h4>Tracks</h4>
+        <div class="track-item" *ngFor="let track of albumTracks">
+          <div class="track-card">
+            <span class="track-number">{{ track.track_number }}.</span>
+            <span class="track-name">{{ track.name }}</span>
+            <span class="track-duration">{{ (track.duration_ms / 60000) | number:'1.2-2' }} </span>
+>>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
             <a [href]="track.external_urls.spotify" target="_blank" class="spotify-link">
               <img src="../../assets/images/spotify.png" alt="Spotify" class="spotify-logo" />
             </a>
@@ -48,7 +72,11 @@
   <!-- Ajoutez ceci après la div de album-details -->
 <div class="video-modal" *ngIf="isPlaying && selectedTrack && selectedTrack.preview_url">
     <div class="modal-header">
+<<<<<<< HEAD
       <h3 class="alex-brush-regular heading">{{ selectedTrack.name }}</h3>
+=======
+      <h3>{{ selectedTrack.name }}</h3>
+>>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
       <button class="close-video-btn" (click)="isPlaying = false">×</button>
     </div>
     <div class="modal-content">
