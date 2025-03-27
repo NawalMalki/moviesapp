@@ -10,7 +10,7 @@ import { YouTubeService } from './youtube.service';  // Importation du service Y
 })
 export class SpotifyService {
   private apiUrl = 'https://api.spotify.com/v1';
-  private token = 'BQDMlFp5sx325s4OfN_RnKN_uet4GQRSHYlCMNg9xU8tXd6gq4EEGr9D5l0TO6kOD0DbPweQtCgSkk6YPA-udE87qsE7DN1wS18gH-b0vH_73XgQrKMegG7j7TQd64Ku_tnkvhF_IhM'; 
+  private token = 'BQAHk1MA4IZl-yol7Knkqxo-ucW4ygy--dAJMIbn6YOrVdbXd2wXdNvIsTW_s3vGD7h8Mr5JmlJiTeGopFPGykfB4eFZTwi2LsU31o9YksMRkTgc9w6eua91pt4NsTAKxyjmgZbwp20'; 
 
   constructor(private http: HttpClient,private youtubeService: YouTubeService) {}
 
@@ -94,5 +94,7 @@ mapTrack(item: Track): Track {
     is_local: item.is_local,
   };
 }
+
+
   
 }

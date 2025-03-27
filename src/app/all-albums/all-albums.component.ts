@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from '../spotify.service';
 import { Album, Track } from '../spotifymodels';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -17,11 +17,13 @@ export class AllAlbumsComponent implements OnInit {
   currentTrack: Track | null = null;
   isPlaying: boolean = false;
   audio: HTMLAudioElement = new Audio();
+  favorisTracks: Track[] = [];
  
 
   constructor(
     private route: ActivatedRoute,
     private spotifyService: SpotifyService,
+     private router: Router,
     private sanitizer: DomSanitizer
   ) {}
 
@@ -86,4 +88,25 @@ export class AllAlbumsComponent implements OnInit {
     
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
+
+  goBack(): void {
+    this.router.navigate(['/']);
+  }
+
+
+  
+toggleFavori(track: Track): void {
+  const index = this.favorisTracks.findIndex(t => t.id === track.id);
+  if (index !== -1) {
+    this.favorisTracks.splice(index, 1);
+  } else {
+    this.favorisTracks.push(track);
+  }
+  localStorage.setItem('favorisTracks', JSON.stringify(this.favorisTracks));
+}
+
+estFavori(track: Track): boolean {
+  return this.favorisTracks.some(t => t.id === track.id);
+}
+  
 }

@@ -14,6 +14,7 @@ export class SongComponent implements OnInit {
   albumsSpanish: Album[] = [];
   tracks: Track[] = [];
   selectedAlbum: Album | null | undefined = null;
+  favoriteAlbums: Album[] = []; // Liste des albums favoris
 
 
   constructor(private spotifyService: SpotifyService,private router: Router) {}
@@ -59,6 +60,22 @@ export class SongComponent implements OnInit {
    // Méthode pour rediriger vers la page des albums en fonction du genre/pays
    showAllAlbums(genre: string) {
     this.router.navigate(['/all-albums', genre]);  // Naviguer vers la page avec l'argument genre
+  }
+
+
+   // ✅ Ajout/Suppression d'un album aux favoris
+   toggleFavori(album: Album) {
+    const index = this.favoriteAlbums.findIndex(favAlbum => favAlbum.id === album.id);
+    if (index > -1) {
+      this.favoriteAlbums.splice(index, 1); // Supprime l’album s'il est déjà en favori
+    } else {
+      this.favoriteAlbums.push(album); // Ajoute l’album aux favoris
+    }
+  }
+
+  // ✅ Vérifier si un album est en favori
+  estFavori(album: Album): boolean {
+    return this.favoriteAlbums.some(favAlbum => favAlbum.id === album.id);
   }
   
 }

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class YouTubeService {
   private apiUrl = 'https://www.googleapis.com/youtube/v3/search';
-  private apiKey = 'AIzaSyByjdKMX9g9QxwxyI_tOiqdpwpRxdl7DZY'; 
+  private apiKey = 'AIzaSyDhOlalvel_2BtI-s6g81NcFOhETLOrS3Y'; 
 
   constructor(private http: HttpClient) {}
 
