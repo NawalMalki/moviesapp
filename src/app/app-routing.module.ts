@@ -5,13 +5,13 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.component';
-import { MangaComponent } from './manga/manga.component'; 
+
 import { WallpapersGhibliComponent } from './wallpapers-ghibli/wallpapers-ghibli.component'; // I
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'manga', component: MangaComponent },
+
   { path: 'wallpapers-ghibli', component: WallpapersGhibliComponent },
   { path: 'motdepasseoublie', component: MotdepasseoublieComponent },
   { path: 'home', component: HomeComponent },

@@ -1,17 +1,17 @@
 <div class="wallpaper-container">
     <h2>Wallpapers Studio Ghibli</h2>
   
-    <!-- Affiche un message d'erreur si nécessaire -->
+   
     <div *ngIf="errorMessage" class="error">
       {{ errorMessage }}
     </div>
   
-    <!-- Affiche un indicateur de chargement -->
+    
     <div *ngIf="!wallpapers.length && !errorMessage" class="loading">
       Chargement des wallpapers...
     </div>
   
-    <!-- Affiche les wallpapers -->
+    
     <div class="wallpaper-list">
       <div *ngFor="let wallpaper of wallpapers" class="wallpaper-card">
         <img [src]="wallpaper.imageUrl" [alt]="wallpaper.title" class="wallpaper-image" />

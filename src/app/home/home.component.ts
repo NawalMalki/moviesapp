@@ -7,6 +7,7 @@ import firebase from 'firebase/compat/app';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
+
 })
 export class HomeComponent implements OnInit {
 
@@ -22,6 +23,10 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });}
 
   logout() {
     this.auth.signOut().then(() => {

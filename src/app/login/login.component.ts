@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+  
 })
 export class LoginComponent {
   email: string = '';

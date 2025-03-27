@@ -21,10 +21,10 @@ export class WallpapersGhibliComponent implements OnInit {
       next: (response) => {
         this.wallpapers = response.results.map((photo: any) => ({
           title: photo.alt_description || 'Wallpaper Ghibli',
-          imageUrl: photo.urls.regular, // URL de l'image en taille moyenne
+          imageUrl: photo.urls.regular, 
           description: photo.description || 'Un magnifique fond d\'écran inspiré de Studio Ghibli.'
         }));
-        console.log(this.wallpapers); // Pour déboguer
+        console.log(this.wallpapers); 
       },
       error: (error) => {
         this.errorMessage = 'Erreur lors de la récupération des wallpapers';

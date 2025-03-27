@@ -16,7 +16,7 @@ export class WallpaperService {
       params: {
         query: 'japonease-anime-manga',
         client_id: this.accessKey,
-        per_page: '15' // Limite à 10 images pour l'exemple
+        per_page: '15' 
       }
     });
   }

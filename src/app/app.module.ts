@@ -16,7 +16,6 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.component';
 import { ProfileComponent } from './profile/profile.component';
-import { MangaComponent } from './manga/manga.component';
 import { WallpapersGhibliComponent } from './wallpapers-ghibli/wallpapers-ghibli.component';
 
 // Firebase config
@@ -37,7 +36,6 @@ const firebaseConfig = {
     RegisterComponent,
     MotdepasseoublieComponent,
     ProfileComponent,
-    MangaComponent,
     WallpapersGhibliComponent
   ],
   imports: [

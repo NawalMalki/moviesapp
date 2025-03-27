@@ -39,6 +39,7 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
+
           },
           "configurations": {
             "production": {
@@ -123,4 +124,5 @@
   "cli": {
     "analytics": "9e1a3187-d08b-4aca-bb66-bbb79827b2d4"
   }
+  
 }
