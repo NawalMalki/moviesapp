@@ -15,6 +15,7 @@ import { MangaListComponent } from './manga-list/manga-list.component';
 import { AnimeListDetailsComponent } from './anime-list-details/anime-list-details.component';
 import { AnimeListComponent } from './anime-list/anime-list.component';
 import { MangaDetailsComponent } from './manga-details/manga-details.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
  
 
@@ -34,7 +35,7 @@ const routes: Routes = [
   {path:'anime-actual',component: AnimeListComponent},
   { path: 'manga/:id', component: MangaDetailsComponent },
   { path: 'anime/:id', component: AnimeListDetailsComponent },
-
+  { path: 'movies/:id', component: MovieDetailsComponent }, 
   { path: 'song', component: SongComponent },
   { path: 'all-albums/:genre', component: AllAlbumsComponent },
 

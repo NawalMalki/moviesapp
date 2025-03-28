@@ -1,0 +1,164 @@
+.details-container {
+    padding: 30px;
+    background-color: #fdf0f5;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .back-button {
+    background-color: #a36e94;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .details-card {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    gap: 30px;
+    
+    /* ✅ Centrage & largeur contrôlée */
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  
+  .left {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .left img {
+    width: 200px;
+    border-radius: 15px;
+  }
+  
+  .stars {
+    margin-top: 10px;
+    font-size: 20px;
+    color: gold;
+  }
+  
+  .right {
+    flex: 2;
+    padding-right: 10px;
+    overflow-y: auto;
+  }
+  
+  .right h2 {
+    font-family: 'Alex Brush', cursive;
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #a04682;
+  }
+  
+  .right h4 {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .right p {
+    margin: 5px 0;
+    font-size: 15px;
+  }
+  
+  .right h3 {
+    color: #a04682;
+    margin-top: 20px;
+    font-family: 'Alex Brush', cursive;
+  }
+  
+  .synopsis {
+    margin-top: 10px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  @media (max-width: 768px) {
+    .details-card {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+    }
+  
+    .left img {
+      width: 150px;
+    }
+  
+    .right {
+      padding: 0;
+      text-align: center;
+    }
+  
+    .right h2 {
+      font-size: 24px;
+    }
+  
+    .right p {
+      font-size: 14px;
+    }
+  
+    .stars {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .details-container {
+      padding: 15px;
+    }
+  
+    .left img {
+      width: 120px;
+    }
+  
+    .right h2 {
+      font-size: 20px;
+    }
+  
+    .right h3 {
+      font-size: 18px;
+    }
+  
+    .right p {
+      font-size: 13px;
+    }
+  }
+
+
+
+
+  .movie-trailer {
+    margin-top: 20px;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  
+   
+  }
+  
+  .movie-trailer iframe {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+  }
+  
+  
