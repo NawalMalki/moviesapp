@@ -1,38 +1,11 @@
-
-
-.wallpaper-container {
+.container {
   padding: 20px;
   text-align: center;
   margin-top: 30px;
   margin-inline: 60px;
 }
 
-.wallpaper-container h2 {
-  color: var(--darkest);
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
-.error {
-  background-color: rgba(255, 0, 0, 0.3); 
-  color: red;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-
-.loading {
-  color: #88487A;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.wallpaper-list {
+.film-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -40,7 +13,11 @@
   padding: 20px;
 }
 
-.wallpaper-card {
+h1, .heading {
+  color: var(--darkest);
+}
+
+.film-card {
   cursor: pointer;
   border: 1px solid var(--dark);
   border-radius: 10px;
@@ -51,84 +28,84 @@
   position: relative;
 }
 
-.wallpaper-card:hover {
+.film-card:hover {
   transform: scale(1.05);
 }
 
-
-
-.wallpaper-image {
+.film-image {
   width: 100%;
-  height: 300px;
+  height: 280px;
   border-radius: 10px;
 }
 
-.wallpaper-card p {
-  color: #666; 
-  font-size: 0.9rem;
-  text-align: center;
-  margin-bottom: 15px;
+.film-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
-
-.heading{
-  color: var(--darkest);
-  margin-bottom: 20px;
+.stars-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
 }
-.download-btn {
 
-  background-color: var(--darkest); 
-  color: var(--lightest); 
+.star {
+  color: gold;
+  font-size: 30px;
+}
+
+.heart-button {
+  background: none;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 1rem;
-
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin-bottom: 60px;
-}
-
-.download-btn:hover {
-  background-color: var(--dark); 
-  color: var(--lightest); 
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
 }
 
-
-@media (max-width: 768px) {
-  .wallpaper-card {
-      width: 100%;
-      max-width: 300px; 
-  }
-
-  .wallpaper-container h2 {
-      font-size: 2rem;
-  }
+.heart {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 500px) {
-  .wallpaper-container {
-      padding: 20px;
-  }
+.heart-button:active .heart {
+  transform: scale(0.9);
+}
 
-  .wallpaper-card {
-      width: 100%;
-      padding: 15px;
-  }
+.heart-outline {
+  fill: none;
+  stroke: #ff4f8b;
+  stroke-width: 2;
+}
 
-  .wallpaper-image {
-      height: 250px;
-  }
+.heart-fill {
+  fill: url(#gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform-origin: center;
+}
 
-  .download-btn {
-      padding: 8px 16px;
-      font-size: 1rem;
-      font-family: "Arial", sans-serif; 
-      color: brown; 
-  }
+.filled {
+  opacity: 1;
+  animation: heartBeat 0.6s cubic-bezier(0.4, 0, 0.6, 1);
+}
 
-  .download-btn:hover {
-      color: #CA4E96; 
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(0.9); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@media (min-width: 600px) {
+  .film-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }

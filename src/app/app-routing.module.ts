@@ -17,6 +17,7 @@ import { AnimeListComponent } from './anime-list/anime-list.component';
 import { MangaDetailsComponent } from './manga-details/manga-details.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { WallpapersGhibliComponent } from './wallpapers-ghibli/wallpapers-ghibli.component';
+import { ModifierInfosUserComponent } from './modifier-infos-user/modifier-infos-user.component';
 
  
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'motdepasseoublie', component: MotdepasseoublieComponent },
+  { path: 'modifier-infos', component: ModifierInfosUserComponent },
   { path: 'home', component: HomeComponent },
   {path:'anime', component:AnimeComponent},
   { path: 'film/:id', component: FilmDetailsComponent },

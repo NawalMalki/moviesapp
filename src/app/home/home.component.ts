@@ -50,4 +50,10 @@ export class HomeComponent implements OnInit {
   toggleProfile() {
     this.isProfileOpen = !this.isProfileOpen;
   }
+  // Naviguer vers le composant ModifierInfosUserComponent
+  navigateToEditProfile() {
+    this.router.navigate(['/modifier-infos']);
+  }
 }
+
+
