@@ -40,6 +40,7 @@ import { NavbarDiffCssComponent } from './navbar-diff-css/navbar-diff-css.compon
 
 import { ProfileComponent } from './profile/profile.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { WallpapersGhibliComponent } from './wallpapers-ghibli/wallpapers-ghibli.component';
 
 
 
@@ -96,7 +97,8 @@ const firebaseConfig = {
     ProfileComponent,
     SongComponent,
     AllAlbumsComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    WallpapersGhibliComponent
 
   ],
   imports: [
