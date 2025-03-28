@@ -1,46 +1,31 @@
-
-
-.wallpaper-container {
+/* Conteneur global */
+.container {
   padding: 20px;
   text-align: center;
   margin-top: 30px;
   margin-inline: 60px;
 }
 
-.wallpaper-container h2 {
-  color: var(--darkest);
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
-.error {
-  background-color: rgba(255, 0, 0, 0.3); 
-  color: red;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-
-.loading {
-  color: #88487A;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.wallpaper-list {
-  width: 100%;
+/* Grille responsive pour les films */
+.film-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
   padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  right: 4%;
+  position: absolute;
+ 
 }
 
-.wallpaper-card {
+/* Titres */
+h1,
+.heading {
+  margin-top: 10px;
+  color: var(--darkest);
+}
+
+/* Carte film avec taille fixe et organisation en colonnes */
+.film-card {
   cursor: pointer;
   border: 1px solid var(--dark);
   border-radius: 10px;
@@ -49,86 +34,124 @@
   background-color: var(--lightest);
   box-shadow: 0 4px 5px var(--lightest);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 450px;  /* Hauteur fixe pour uniformiser les cartes */
+  width: 193PX;
 }
 
-.wallpaper-card:hover {
+.film-card:hover {
   transform: scale(1.05);
 }
 
-
-
-.wallpaper-image {
+/* Image du film : occupe 60% de la hauteur de la carte et est centrée */
+.film-image {
   width: 100%;
-  height: 300px;
+  height: 60%;
   border-radius: 10px;
+  object-fit: cover;  /* Assure que l'image garde ses proportions et comble l'espace */
 }
 
-.wallpaper-card p {
-  color: #666; 
-  font-size: 0.9rem;
-  text-align: center;
-  margin-bottom: 15px;
+/* Section des étoiles et bouton cœur */
+.film-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  bottom: 5%;
+  left: 20%;
+  position: absolute;
 }
 
-
-.heading{
-  color: var(--darkest);
-  margin-bottom: 20px;
+.star {
+  color: gold;
+  font-size: 30px;
 }
-.download-btn {
 
-  background-color: var(--darkest); 
-  color: var(--lightest); 
+/* Bouton du cœur aligné à droite (ajusté dans le flux flex si besoin) */
+.heart-button {
+  background: none;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 1rem;
-
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin-bottom: 60px;
-}
-
-.download-btn:hover {
-  background-color: var(--dark); 
-  color: var(--lightest); 
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  position: relative;
+  z-index: 1;
 }
 
+/* Icône du cœur avec effet d'ombrage */
+.heart {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
 
-@media (max-width: 768px) {
-  .wallpaper-card {
-      width: 100%;
-      max-width: 300px; 
-  }
+/* Contour du cœur */
+.heart-outline {
+  fill: none;
+  stroke: #ff4f8b;
+  stroke-width: 2;
+  transition: stroke 0.3s ease-in-out;
+}
 
-  .wallpaper-container h2 {
-      font-size: 2rem;
+/* Remplissage du cœur avec dégradé */
+.heart-fill {
+  fill: url(#gradient);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  transform: scale(1);
+}
+
+/* Animation pour le cœur rempli */
+.filled {
+  opacity: 1;
+  animation: pulse 0.5s ease-out, glow 1.2s ease-out;
+}
+
+/* Effet de pulsation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Effet de glow */
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 5px rgba(255, 79, 139, 0.5)); }
+  50% { filter: drop-shadow(0 0 10px rgba(255, 79, 139, 0.7)); }
+  100% { filter: drop-shadow(0 0 5px rgba(255, 79, 139, 0.5)); }
+}
+
+/* Maintien de la position des SVG */
+svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* Grille responsive pour les films avec 5 colonnes sur grands écrans */
+.film-grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(5, 1fr);  /* 5 colonnes égales */
+}
+
+/* Adaptation pour les écrans moyens */
+@media (max-width: 1200px) {
+  .film-grid {
+    grid-template-columns: repeat(3, 1fr);  /* 3 colonnes pour les écrans moyens */
   }
 }
 
-@media (max-width: 500px) {
-  .wallpaper-container {
-      padding: 20px;
-  }
-
-  .wallpaper-card {
-      width: 100%;
-      padding: 15px;
-  }
-
-  .wallpaper-image {
-      height: 250px;
-  }
-
-  .download-btn {
-      padding: 8px 16px;
-      font-size: 1rem;
-      font-family: "Arial", sans-serif; 
-      color: brown; 
-  }
-
-  .download-btn:hover {
-      color: #CA4E96; 
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+  .film-grid {
+    grid-template-columns: repeat(1, 1fr);  /* 1 colonne pour les écrans étroits */
   }
 }

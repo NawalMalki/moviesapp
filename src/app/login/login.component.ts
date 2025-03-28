@@ -21,15 +21,13 @@ export class LoginComponent {
     }
 
     this.auth.signInWithEmailAndPassword(this.email, this.password)
-      .then((userCredential) => {
-        console.log('Login successful!', userCredential);
-        this.errorMessage = ''; 
-        this.router.navigate(['/home']);
-      })
-      .catch((error) => {
-        console.error('Login error:', error);
-        this.errorMessage = 'Login failed. Please check your credentials and try again.';
-      });
+  .then((userCredential) => {
+    console.log('Login successful!', userCredential);
+    this.errorMessage = ''; 
+
+    // ✅ Ici, c'est parfait :
+    this.router.navigate(['/home']);
+  })
   }
 
   forgotPassword() {

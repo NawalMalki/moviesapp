@@ -14,9 +14,9 @@ export class WallpaperService {
   getWallpapers(): Observable<any> {
     return this.http.get(`${this.baseUrl}/search/photos`, {
       params: {
-        query: 'japonease-anime-manga',
+        query: 'japonease-manga-anime-hunterXhunter',
         client_id: this.accessKey,
-        per_page: '15' 
+        per_page: '25' 
       }
     });
   }
