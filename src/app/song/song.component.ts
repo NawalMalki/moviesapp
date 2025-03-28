@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
 import { Album, Track } from '../spotifymodels';
 import { Router } from '@angular/router'; // Assurez-vous d'importer Router
+import { FavoritesService } from '../favorite.service';
 
 @Component({
   selector: 'app-song',
@@ -17,7 +18,7 @@ export class SongComponent implements OnInit {
   favoriteAlbums: Album[] = []; // Liste des albums favoris
 
 
-  constructor(private spotifyService: SpotifyService,private router: Router) {}
+  constructor(private spotifyService: SpotifyService,private router: Router, private favoritesService: FavoritesService ) {}
 
   ngOnInit() {
     // Charger les albums français
@@ -63,19 +64,6 @@ export class SongComponent implements OnInit {
   }
 
 
-   // ✅ Ajout/Suppression d'un album aux favoris
-   toggleFavori(album: Album) {
-    const index = this.favoriteAlbums.findIndex(favAlbum => favAlbum.id === album.id);
-    if (index > -1) {
-      this.favoriteAlbums.splice(index, 1); // Supprime l’album s'il est déjà en favori
-    } else {
-      this.favoriteAlbums.push(album); // Ajoute l’album aux favoris
-    }
-  }
-
-  // ✅ Vérifier si un album est en favori
-  estFavori(album: Album): boolean {
-    return this.favoriteAlbums.some(favAlbum => favAlbum.id === album.id);
-  }
+   
   
 }

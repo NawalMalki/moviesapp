@@ -1,11 +1,47 @@
 <div class="container">
-    <h1 class="alex-brush-regular">Mes Favoris</h1>
-    <div class="film-grid">
-      <div *ngFor="let film of favoris" class="film-card">
-        <img [src]="film.image" alt="{{ film.title }}" class="film-image" />
-        <h2 class="alex-brush-regular">{{ film.title }} ({{ film.release_date }})</h2>
-        <button class="back-button" (click)="supprimerFavori(film)">❌ Retirer</button>
-      </div>
-    </div>
-  </div>
+  <app-navbar-diff-css></app-navbar-diff-css>
+  <h1 class="alex-brush-regular">Studio Ghibli Films</h1>
   
+  <div class="category-section">
+      <h2 class="alex-brush-regular">Films</h2>
+      <div class="scroll-container" id="films">
+        <!-- 7to cards dyalkum hna f des divs w copiew css
+          dyalhum film-card !!!!!!!!!!!!!!!  -->
+        
+      </div>
+  </div>
+
+  <div class="category-section">
+      <h2 class="alex-brush-regular">Animes</h2>
+      <div class="scroll-container" id="animes"></div>
+  </div>
+
+  <div class="category-section">
+      <h2 class="alex-brush-regular"> Mangas</h2>
+      <div class="scroll-container" id="mangas"></div>
+  </div>
+
+  <div class="category-section">
+      <h2 class="alex-brush-regular">Films Ghibli</h2>
+      <div class="scroll-container" id="ghibli"></div>
+  </div>
+
+  <div class="category-section">
+      <h2 class="alex-brush-regular">Music</h2>
+      <div class="scroll-container" id="music">
+
+
+
+        
+      </div>
+  </div>
+
+
+  <div class="category-section">
+    <h2 class="alex-brush-regular">Wallpapers</h2>
+    <div class="scroll-container" id="wallpapers"></div>
+</div>
+
+  
+</div>
+
