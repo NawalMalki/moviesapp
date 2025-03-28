@@ -10,7 +10,7 @@ import { YouTubeService } from './youtube.service';  // Importation du service Y
 })
 export class SpotifyService {
   private apiUrl = 'https://api.spotify.com/v1';
-  private token = 'BQCPdNXDro5nYttt0LmIuMbG1JX1J0ocAd7EXR4A6sqDnwGgiALyloOeS6K4DJMv2bl0hXUKBwNURIxY6R3bpvZEEjksqAy2UNEg2wHeQdxELD6s6Ss7Of4HGSKlnL4c1hn5X7k0RvI'; 
+  private token = 'BQApU-0g_RyPm5jEHv9H56JlLyJ6ostyF1xqwXdZLg1DZrqykmDm6WLEX46qC_Zabfto95Qhfg71hMQNb_lKlLB0Cft8czkzjfY1MiPWZx7AOJOXKGsfusyjiYYqtAHWD-vBPCQHGoQ'; 
 
   constructor(private http: HttpClient,private youtubeService: YouTubeService) {}
 

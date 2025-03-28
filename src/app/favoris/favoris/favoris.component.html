@@ -1,47 +1,93 @@
 <div class="container">
-  <app-navbar-diff-css></app-navbar-diff-css>
-  <h1 class="alex-brush-regular">Studio Ghibli Films</h1>
+    <app-navbar-diff-css></app-navbar-diff-css>
+    <h1 class="alex-brush-regular">Mes Favoris</h1>
+    
+    <!-- Section Films Ghibli -->
+    <div class="category-section">
+      <h2 class="alex-brush-regular">Films Ghibli</h2>
+      <div class="scroll-container" id="ghibli">
+        <div *ngIf="loading" class="loading-spinner">
+          <div class="spinner"></div>
+        </div>
   
-  <div class="category-section">
-      <h2 class="alex-brush-regular">Films</h2>
-      <div class="scroll-container" id="films">
-        <!-- 7to cards dyalkum hna f des divs w copiew css
-          dyalhum film-card !!!!!!!!!!!!!!!  -->
-        
+        <div *ngIf="!loading && ghibliFavorites.length === 0" class="no-favorites">
+          <p>No favorite movies for the moment.</p>
+        </div>
+  
+        <div class="film-grid">
+          <div *ngFor="let film of ghibliFavorites" class="film-card">
+            <img [src]="film.image" alt="{{ film.title }}" class="film-image" />
+            <h2 class="alex-brush-regular">{{ film.title }} ({{ film.release_date }})</h2>
+            <div class="film-rating">
+              <div class="stars-container">
+                <span *ngFor="let star of getStars(film.rt_score)" class="star">{{ star }}</span>
+              </div>
+              <button class="heart-button filled" (click)="removeFavorite(film, $event)">
+                <svg class="heart" viewBox="0 0 24 24">
+                  <path
+                    class="heart-fill"
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
-
-  <div class="category-section">
+    </div>
+  
+    <!-- Autres sections (conservées mais vides) -->
+    <div class="category-section">
+      <h2 class="alex-brush-regular">Movies</h2>
+      <div class="scroll-container" id="films"></div>
+    </div>
+  
+    <div class="category-section">
       <h2 class="alex-brush-regular">Animes</h2>
       <div class="scroll-container" id="animes"></div>
-  </div>
-
-  <div class="category-section">
-      <h2 class="alex-brush-regular"> Mangas</h2>
+    </div>
+  
+    <div class="category-section">
+      <h2 class="alex-brush-regular">Mangas</h2>
       <div class="scroll-container" id="mangas"></div>
-  </div>
-
-  <div class="category-section">
-      <h2 class="alex-brush-regular">Films Ghibli</h2>
-      <div class="scroll-container" id="ghibli"></div>
-  </div>
-
-  <div class="category-section">
+    </div>
+  
+    <div class="category-section">
       <h2 class="alex-brush-regular">Music</h2>
       <div class="scroll-container" id="music">
-
-
-
+        <div *ngIf="loading" class="loading-spinner">
+          <div class="spinner"></div>
+        </div>
+    
+        <div *ngIf="!loading && musicAlbums.length === 0" class="no-favorites">
+          <p>No favorite music for the moment.</p>
+        </div>
         
+        <div class="film-grid">
+          <div *ngFor="let album of musicAlbums" class="skill-card" >
+            <div class="logo-container">
+              <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
+            </div>
+    
+            <div class="titbut">
+              <h2 class="alex-brush-regular">{{ album.name }}</h2>
+              <button class="heart-button filled" (click)="removeFavoriteMovie(album)">
+                <svg class="heart" viewBox="0 0 24 24">
+                  <path
+                    class="heart-fill"
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
-
-
-  <div class="category-section">
-    <h2 class="alex-brush-regular">Wallpapers</h2>
-    <div class="scroll-container" id="wallpapers"></div>
-</div>
-
+    </div>
+    
   
-</div>
-
+    <div class="category-section">
+      <h2 class="alex-brush-regular">Wallpapers</h2>
+      <div class="scroll-container" id="wallpapers"></div>
+    </div>
+  </div>

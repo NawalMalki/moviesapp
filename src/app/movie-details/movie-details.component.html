@@ -1,0 +1,23 @@
+<div class="details-container">
+  <button class="back-button" routerLink="/movies">Close</button>
+
+  <div class="details-card" *ngIf="!loading && selectedMovie">
+    <div class="left">
+      <img [src]="'https://image.tmdb.org/t/p/w500' + selectedMovie.poster_path" [alt]="selectedMovie.title" />
+      <div class="stars">
+        <ng-container *ngFor="let star of getStars(selectedMovie.vote_average)">
+          <span class="star">★</span>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="right">
+      <h2 class="movie-title">{{ selectedMovie.title }}</h2>
+      <p class="movie-synopsis"><strong>Synopsis:</strong> {{ selectedMovie.overview }}</p>
+
+      <div *ngIf="trailerUrl" class="movie-trailer">
+        <iframe class="trailer-iframe" [src]="trailerUrl | safeUrl" frameborder="0" allow="autoplay; fullscreen" autoplay="true"></iframe>
+      </div>
+    </div>
+  </div>
+</div>

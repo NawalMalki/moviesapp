@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyAnimeService } from '../services/my-anime.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-anime-list',
@@ -12,8 +12,8 @@ export class AnimeListComponent implements OnInit {
   favorites: any[] = [];
   loading = true;
 
-  constructor(private animeService: MyAnimeService) {}
-
+  constructor(private animeService: MyAnimeService,  private router: Router) {}
+  
   ngOnInit(): void {
     this.animeService.getTopAnimes().subscribe({
       next: (response) => {
@@ -26,10 +26,13 @@ export class AnimeListComponent implements OnInit {
     });
   }
 
-  getStars(score: number): string[] {
-    const starsCount = Math.floor(score / 20);
-    return Array(starsCount).fill('★');
+  getStarsArray(score: number): { full: number, half: boolean } {
+    const scaled = score / 2; // Score /10 → note sur 5
+    const full = Math.floor(scaled);
+    const half = scaled - full >= 0.25 && scaled - full < 0.75;
+    return { full, half };
   }
+  
   
   
 
@@ -45,4 +48,10 @@ export class AnimeListComponent implements OnInit {
   isFavorite(anime: any): boolean {
     return this.favorites.some(f => f.mal_id === anime.mal_id);
   }
+
+  viewAnimeDetails(id: number): void {
+    this.router.navigate(['/anime', id]);
+  }
+
 }
+

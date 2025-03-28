@@ -12,8 +12,8 @@ import firebase from 'firebase/compat/app';
 export class HomeComponent implements OnInit {
 
   user: firebase.User | null = null;
-  userData: any = null; // Stocke les infos Firestore de l'utilisateur
-  isProfileOpen = false; // Ã‰tat de la sidebar du profil
+  userData: any = null; 
+  isProfileOpen = false; 
 
   constructor(
     private auth: AngularFireAuth, 

@@ -1,38 +1,33 @@
 <body class="playfair-display-font">
+  <p *ngIf="errorMessage" class="messageErreur playfair-display-font">{{ errorMessage }}</p>
   <div class="container">
-    <h2 class="playfair-display-font-bold">Page d'inscription</h2>
+    <h2 class="playfair-display-font-bold">Registration Page</h2>
     <form (submit)="register(); $event.preventDefault()">
       <div class="form-group">
-        <input type="text" class="form-control playfair-display-font" id="nom" name="nom" [(ngModel)]="nom" placeholder="Entrez votre nom" required />
+        <input type="text" class="form-control playfair-display-font" id="nom" name="nom" [(ngModel)]="nom" placeholder="Enter your last name" required />
       </div>
       
       <div class="form-group">
-        <input type="text" class="form-control playfair-display-font" id="prenom" name="prenom" [(ngModel)]="prenom" placeholder="Entrez votre prénom" required />
+        <input type="text" class="form-control playfair-display-font" id="prenom" name="prenom" [(ngModel)]="prenom" placeholder="Enter your first name" required />
       </div>
       
       <div class="form-group">
-        <input type="email" class="form-control playfair-display-font" id="email" name="email" [(ngModel)]="email" placeholder="Entrez votre email" required />
+        <input type="email" class="form-control playfair-display-font" id="email" name="email" [(ngModel)]="email" placeholder="Enter your email" required />
       </div>
     
       <div class="form-group">
-        <input class="form-control playfair-display-font" type="password" id="password" name="password" [(ngModel)]="password" placeholder="Entrez votre mot de passe" required />
+        <input class="form-control playfair-display-font" type="password" id="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required />
       </div>
 
       <div class="form-group">
-        <input class="form-control playfair-display-font" type="password" id="confirmation" name="confirmation" [(ngModel)]="confirmation" placeholder="Ré-entrez votre mot de passe" required />
+        <input class="form-control playfair-display-font" type="password" id="confirmation" name="confirmation" [(ngModel)]="confirmation" placeholder="Re-enter your password" required />
       </div>
     
       <div class="form-group2 playfair-display-font">
-        <button type="submit" class="playfair-display-font-bold">S'inscrire</button>
-        <button (click)="googleLogin()" class="link">Se connecter avec Google</button>
-        <button (click)="navigateToLogin()" class="link">Vous avez déjà un compte ?</button>
+        <button type="submit" class="playfair-display-font-bold">Sign Up</button>
+        <button (click)="googleLogin()" class="link">Sign in with Google</button>
+        <button (click)="navigateToLogin()" class="link">Already have an account?</button>
       </div>
-      
     </form>
-
-   
-    
   </div>
-  
-  <p *ngIf="errorMessage" class="messageErreur playfair-display-font">{{ errorMessage }}</p>
 </body>

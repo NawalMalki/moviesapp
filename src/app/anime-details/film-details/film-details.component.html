@@ -1,7 +1,7 @@
-<div class="film-details" *ngIf="filmData">
+<div class="details-container" *ngIf="filmData">
   <button (click)="goBack()" class="back-button">Retour</button>
 
-  <div class="film-container">
+  <div class="film-container" *ngIf="filmData">
     <div class="film-left">
       <img [src]="filmData.image" alt="{{ filmData.title }}" class="film-image" />
 
@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="film-right">
+    <div class="right">
       <h1 class="alex-brush-regular">{{ filmData.title }} ({{ filmData.release_date }})</h1>
       <h2 class="alex-brush-regular">{{ filmData.original_title }} ({{ filmData.original_title_romanised }})</h2>
 
@@ -19,7 +19,7 @@
       <!--<img *ngIf="filmData.movie_banner" [src]="filmData.movie_banner" alt="{{ filmData.title }} Banner" class="film-banner" />-->
 
       <!-- Informations de base -->
-      <div class="film-info">
+      <div class="right">
         <p><strong>Director:</strong> {{ filmData.director }}</p>
         <p><strong>Producer:</strong> {{ filmData.producer }}</p>
         <p><strong>Running Time:</strong> {{ filmData.running_time }} minutes</p>

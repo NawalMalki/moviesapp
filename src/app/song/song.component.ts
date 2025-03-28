@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
 import { Album, Track } from '../spotifymodels';
 import { Router } from '@angular/router'; // Assurez-vous d'importer Router
-import { FavoritesService } from '../favorite.service';
 
 @Component({
   selector: 'app-song',
@@ -15,10 +14,9 @@ export class SongComponent implements OnInit {
   albumsSpanish: Album[] = [];
   tracks: Track[] = [];
   selectedAlbum: Album | null | undefined = null;
-  favoriteAlbums: Album[] = []; // Liste des albums favoris
 
 
-  constructor(private spotifyService: SpotifyService,private router: Router, private favoritesService: FavoritesService ) {}
+  constructor(private spotifyService: SpotifyService,private router: Router) {}
 
   ngOnInit() {
     // Charger les albums français
@@ -60,10 +58,7 @@ export class SongComponent implements OnInit {
 
    // Méthode pour rediriger vers la page des albums en fonction du genre/pays
    showAllAlbums(genre: string) {
-    this.router.navigate(['/all-albums', genre]);  // Naviguer vers la page avec l'argument genre
-  }
-
-
-   
-  
+    this.router.navigate(['/all-albums', genre]);  // Naviguer vers la page avec l'argument genre
+  }
+  
 }

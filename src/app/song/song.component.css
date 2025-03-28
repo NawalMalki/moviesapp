@@ -1,7 +1,8 @@
+
 .main_Container {
   padding: 20px;
   text-align: center;
-  margin-top : 30px;
+  margin-top: 30px;
   margin-inline: 60px;
 }
 
@@ -16,13 +17,11 @@
   overflow: hidden;
 }
 
-
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
-  padding: 20px; 
-  
+  padding: 20px;
 }
 
 .skill-card {
@@ -40,12 +39,9 @@
 }
 
 .logo-container {
- 
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
 }
 
 .logo_skill {
@@ -88,17 +84,12 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
- 
   width: 100%; /* Pour prendre toute la largeur */
- 
 }
-
-
-
 
 /* Responsivité */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
   .main_Container {
     padding: 20px;
     text-align: center;
@@ -114,10 +105,10 @@ button:active {
     z-index: 1;
     overflow: hidden;
   }
-  .more{
+  .more {
     margin-top: 20px;
   }
-  button{
+  button {
     margin-bottom: 0;
   }
 }
