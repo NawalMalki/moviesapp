@@ -10,8 +10,7 @@ import { YouTubeService } from './youtube.service';  // Importation du service Y
 })
 export class SpotifyService {
   private apiUrl = 'https://api.spotify.com/v1';
-  private token = 'BQCuchsKN9WskBJ_RBF5CI-m4lvwIGEvVPZ3kW1OUjbfQJlkMkYsFX6w5DC2Zf6QJT81h1vH8kG8Xxm7_2Lp_teFCecDQj6J3pHSw2JxNoXwtLawB8opD5sV4mzmiuwEgKpyCjR_sMg'; 
-
+  private token = 'BQApU-0g_RyPm5jEHv9H56JlLyJ6ostyF1xqwXdZLg1DZrqykmDm6WLEX46qC_Zabfto95Qhfg71hMQNb_lKlLB0Cft8czkzjfY1MiPWZx7AOJOXKGsfusyjiYYqtAHWD-vBPCQHGoQ'; 
 
   constructor(private http: HttpClient,private youtubeService: YouTubeService) {}
 
@@ -37,7 +36,7 @@ export class SpotifyService {
   }
 
   getAlbumsSpanish(): Observable<Album[]> {
-    const ids = '4iyoO6tOGnEaR2CYrUmukL,0Wf0E2diHQJRdkPR12BcXs,0ePoAsHC4vvO8tZzPKtYC3,67dHBx9SPvbc0fiz8KzgPv,1lCpCUkyehHRqVv3q7elLm,5tp3ALCbxJuAJFUHv5XmeN,6x58KbazwOTgq3kvqCkfU8,2Fy0cyNtT6mpTVWtAAyfh4,5z4aZJ5U7LqwRc2tXk98cc,6ByOad22iRlD1jd5kedqXT,3lnk9plFdJaX9w7a2LG1wh,1gxCDt7C0JI9tucRc6IZL2,1MM793zvDaFYCPltgO9Cl3,0HKQNrezcj0dyQC4vuvUYm,5N7FjUYrrAXgUUTjlqcBpN,5N7FjUYrrAXgUUTjlqcBpN,4IabA7t6hEqyzNiy00gDid,5E7f4DCo6MdAti2L3DL3E9,22AX5n4lUirG6L2rIl98I7,69RDPyF9WUlvxeUnwcWP9E';
+    const ids = 'BQAfAF732p84T1h7TlVUv61ApopEFOlQcg0q0B-C_A74lC72_VpG9PCsTrhmMS_yGQKnVtWMQ6KV73Xmmr-ez9tZolcOXgd7aGNbye9Gu5iAEBUS8NbHn_529f6ReVBRtz_BADhgYJY';
     return this.http.get<{ albums: Album[] }>(`${this.apiUrl}/albums?ids=${ids}`, {
       headers: new HttpHeaders({ 'Authorization': `Bearer ${this.token}` })
     }).pipe(
@@ -95,5 +94,7 @@ mapTrack(item: Track): Track {
     is_local: item.is_local,
   };
 }
+
+
   
 }

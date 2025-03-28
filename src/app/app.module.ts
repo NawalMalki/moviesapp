@@ -26,7 +26,6 @@ import { MotdepasseoublieComponent } from './motdepasseoublie/motdepasseoublie.c
 
 import { FavorisComponent } from './favoris/favoris/favoris.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
-import { AllAlbumsComponent } from './all-albums/all-albums.component';
 import { SongComponent } from './song/song.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SafeUrlPipe } from './safe-url.pipe';
@@ -42,6 +41,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { WallpapersGhibliComponent } from './wallpapers-ghibli/wallpapers-ghibli.component';
 import { ModifierInfosUserComponent } from './modifier-infos-user/modifier-infos-user.component';
+import { AllAlbumsComponent } from './all-albums/all-albums.component';
+import { from } from 'rxjs';
 
 
 

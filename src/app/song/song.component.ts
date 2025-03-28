@@ -58,8 +58,7 @@ export class SongComponent implements OnInit {
 
    // Méthode pour rediriger vers la page des albums en fonction du genre/pays
    showAllAlbums(genre: string) {
-    this.router.navigate(['/all-albums', genre]);  // Naviguer vers la page avec l'argument genre
-  }
-  
+    this.router.navigate(['/all-albums', genre]);  // Naviguer vers la page avec l'argument genre
+  }
+  
 }
-

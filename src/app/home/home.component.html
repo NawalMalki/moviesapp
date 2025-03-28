@@ -1,99 +1,93 @@
-<div class="container alex-brush-regular">
+<div class="container">
+    <!-- Navigation Bar -->
     <app-navbar-diff-css></app-navbar-diff-css>
-    <h2 class="alex-brush-regular">Entertainment Hub</h2>
-    <div class="categories"></div>
-    <div class="profile" (click)="toggleProfile()">
-        <i class="fas fa-user"></i>
-    </div>
-</div>
-
-<div class="mini-container">
+    <!-- Hero Section -->
     <div class="hero-section">
         <div class="hero-content">
-            <h1 class="alex-brush-regular">Dive into a Magical World</h1>
-            <p>Explore movies, anime, manga, and much more, inspired by the enchanting universe of Studio Ghibli.</p>
-            <a href="#" class="cta-button">Start Exploring</a>
+            <h1 class="alex-brush-regular">Plongez dans un monde magique</h1>
+            <p>Découvrez des films, animes, mangas et bien plus encore, inspirés par l’univers enchanteur de Studio Ghibli.</p>
+            <a href="#" class="cta-button">Explorer maintenant</a>
+        </div>
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <img src="../../assets/images/TOTO.png" alt="Totoro" class="float totoro">
+            <img src="../../assets/images/image-removebg-preview (2).png" alt="Totoro" class="float star-wars">
+    
+            <img src="../../assets/images/image-removebg-preview (4).png" alt="MUSIC" class="float MUSIC">
+            <img src="../../assets/images/image-removebg-preview (5).png" alt="TV" class="float TV">
         </div>
     </div>
 
+
+
+    <!-- Explore More Section -->
+  <!-- Featured Content Section -->
+<section class="featured-content">
+    <h3 class="alex-brush-regular">À la une</h3>
+    <div class="content-grid">
+        <!-- Carte 1 : Les chefs-d’œuvre intemporels -->
+        <div class="content-card">
+            <img src="../../assets/images/images (3).jpeg" alt="Studio Ghibli">
+            <h4>Les chefs-d’œuvre intemporels</h4>
+            <p>Revivez l’émotion des films classiques et découvrez les secrets derrière leur création magique.</p>
+        </div>
+        <!-- Carte 2 : L’essor de l’animation contemporaine -->
+        <div class="content-card">
+            <img src="../../assets/images/animation.webp" alt="Animation">
+            <h4>L’essor de l’animation contemporaine</h4>
+            <p>Explorez comment l’innovation et la tradition se mêlent pour redéfinir l’art de l’animation.</p>
+        </div>
+        <!-- Carte 3 : La magie de la musique -->
+        <div class="content-card">
+            <img src="../../assets/images/image.png" alt="Musique">
+            <h4>La magie de la musique</h4>
+            <p>Plongez dans l’univers des bandes originales et découvrez comment la musique sublime chaque scène.</p>
+        </div>
+    </div>
+</section>
+
     <!-- Featured Content Section -->
     <section class="featured-content">
-        <h3 class="alex-brush-regular">Featured</h3>
+        <h3 class="alex-brush-regular">Desserts</h3>
         <div class="content-grid">
             <div class="content-card">
-                <img src="../../assets/images/139d84869e4daadc68c3c49f69a8288e.jpg" alt="Ghibli Movies">
-                <h4>Ghibli Movies</h4>
-                <p>Relive the timeless classics from Studio Ghibli.</p>
+                <img src="../../assets/images/139d84869e4daadc68c3c49f69a8288e.jpg" alt="Films Ghibli">
+                <h4>Films Ghibli</h4>
+                <p>Revivez les classiques intemporels de Studio Ghibli.</p>
             </div>
             <div class="content-card">
-                <img src="../../assets/images/hunterXhunter.jpeg" alt="Anime">
-                <h4>Anime</h4>
-                <p>Explore a selection of captivating anime.</p>
+                <img src="../../assets/images/hunterXhunter.jpeg" alt="Animes">
+                <h4>Animes</h4>
+                <p>Explorez une sélection d’animes captivants.</p>
             </div>
             <div class="content-card">
                 <img src="../../assets/images/ghibli-filter-pixai-model.webp" alt="Manga">
                 <h4>Manga</h4>
-                <p>Dive into unique illustrated stories.</p>
+                <p>Plongez dans des histoires illustrées uniques.</p>
             </div>
         </div>
     </section>
-
-    <!-- Explore More Section -->
-    <section class="explore-more">
-        <h3 class="alex-brush-regular">Explore More</h3>
-        <div class="explore-grid">
-            <div class="explore-card">
-                <img src="../../assets/images/ghibli-filter-pixai-model.webp" alt="Studio Ghibli Art">
-                <h4>Studio Ghibli Art</h4>
-                <p>Discover beautiful illustrations and concept art.</p>
-            </div>
-            <div class="explore-card">
-                <img src="../../assets/images/hunterXhunter.jpeg" alt="Soundtracks">
-                <h4>Soundtracks</h4>
-                <p>Listen to the iconic music from Studio Ghibli.</p>
-            </div>
-            <div class="explore-card">
-                <img src="../../assets/images/ghibli-filter-pixai-model.webp" alt="Merchandise">
-                <h4>Merchandise</h4>
-                <p>Explore unique merchandise products.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
-            <a href="#">About</a>
+            <a href="#">À propos</a>
             <a href="#">Contact</a>
-            <a href="#">Terms of Use</a>
+            <a href="#">Conditions d'utilisation</a>
         </div>
         <div class="social-links">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-        <p>&copy; 2025 Entertainment Hub. All Rights Reserved.</p>
+        <p>&copy; 2025 Centre de divertissement. Tous droits réservés.</p>
     </footer>
-</div>
 
-<div class="profile-sidebar playfair-display-font" *ngIf="isProfileOpen">
-    <button class="close-btn" (click)="toggleProfile()">
-        <i class="fas fa-times"></i>
-    </button>
 
-    <h3>{{ userData?.firstName }} {{ userData?.lastName }}</h3>
-    <p>{{ userData?.email }}</p>
-
-    <div class="profile-actions">
-        <button class="playfair-display-font" (click)="navigateToEditProfile()">
-            <i class="fas fa-user-edit"></i> Edit My Info
-        </button>
-        
-        <button class="playfair-display-font" [routerLink]="'/favoris'">
-            <i class="fas fa-heart"></i> View My Favorites
-        </button>
-        <button (click)="logout()" class="playfair-display-font">
-            <i class="fas fa-sign-out-alt"></i> Log Out
-        </button>
+    <div  class="profile" routerLink="/profile">
+        <i class="fas fa-user"><a href="#top"></a></i>
     </div>
+
+   
+    
+    
 </div>

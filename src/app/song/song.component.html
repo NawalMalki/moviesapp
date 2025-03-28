@@ -1,23 +1,14 @@
 <div class="main_Container">
-<<<<<<< HEAD
   <app-navbar-diff-css></app-navbar-diff-css>
   <div class="Skill alex-brush-regular">All Albums</div>
 
   
   <div class="more">
     <div class="Skill alex-brush-regular">Albums France</div>
-=======
-  <div class="Skill">All Albums</div>
-
-  
-  <div class="more">
-    <div class="Skill">Albums France</div>
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
     <button (click)="showAllAlbums('france')">See More</button>
   
   </div>
  
-<<<<<<< HEAD
 
   <div class="skills-container">
     <!-- Limiter l'affichage à 7 albums -->
@@ -33,28 +24,10 @@
 
 <div class="more">
   <div class="Skill alex-brush-regular">Albums K-pop</div>
-=======
-<section class="skills">
-  <div class="skills-container">
-    <!-- Limiter l'affichage à 7 albums -->
-    <div class="skill-card" *ngFor="let album of albumsFrance | slice:0:7">
-      <div class="logo-container">
-        <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
-      </div>
-      <span class="tool-name">{{ album.name }}</span>
-    </div>
-  </div>
- 
-</section>
-
-<div class="more">
-  <div class="Skill">Albums K-pop</div>
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
   <button (click)="showAllAlbums('kpop')">See More</button>
 
 </div>
 
-<<<<<<< HEAD
 
     <div class="skills-container">
       <div class="skill-card" *ngFor="let album of albumsKpop | slice:0:8">
@@ -62,38 +35,20 @@
           <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
         </div>
         <h2 class="tool-name playfair-display-font">{{ album.name }}</h2>
-=======
-  <section class="skills">
-    <div class="skills-container">
-      <div class="skill-card" *ngFor="let album of albumsKpop | slice:0:7">
-        <div class="logo-container">
-          <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
-        </div>
-        <span class="tool-name">{{ album.name }}</span>
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
       </div>
     </div>
     
     
-<<<<<<< HEAD
 
-=======
-  </section> 
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
 
 
   
 <div class="more">
-<<<<<<< HEAD
     <div class="Skill alex-brush-regular">Albums Spain</div>
-=======
-    <div class="Skill">Albums Spain</div>
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
     <button (click)="showAllAlbums('spain')">See More</button>
   
   </div>
  
-<<<<<<< HEAD
 
   <div class="skills-container">
     
@@ -104,21 +59,6 @@
       <h2 class="tool-name playfair-display-font">{{ album.name }}</h2>
     </div>
   </div>
- 
+ 
 
 </div>
-=======
-<section class="skills">
-  <div class="skills-container">
-    
-    <div class="skill-card" *ngFor="let album of albumsSpanish| slice:0:7">
-      <div class="logo-container">
-        <img *ngIf="album.images[0]" [src]="album.images[0].url" alt="{{ album.name }}" class="logo_skill"/>
-      </div>
-      <span class="tool-name">{{ album.name }}</span>
-    </div>
-  </div>
- 
-</section> 
-</div>
->>>>>>> b205cf65a8d8fa4fb151ab7e28d6d479f4799cbc
