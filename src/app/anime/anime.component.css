@@ -1,10 +1,8 @@
-
 .container {
   padding: 20px;
   text-align: center;
-  margin-top : 30px;
+  margin-top: 30px;
   margin-inline: 60px;
-  
 }
 
 .film-grid {
@@ -15,7 +13,7 @@
   padding: 20px;
 }
 
-h1 , .heading{
+h1, .heading {
   color: var(--darkest);
 }
 
@@ -27,6 +25,7 @@ h1 , .heading{
   transition: transform 0.2s;
   background-color: var(--lightest);
   box-shadow: 0 4px 5px var(--lightest);
+  position: relative;
 }
 
 .film-card:hover {
@@ -43,9 +42,13 @@ h1 , .heading{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  justify-content: center;
   margin-top: 10px;
-  
+}
+
+.stars-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .star {
@@ -53,74 +56,54 @@ h1 , .heading{
   font-size: 30px;
 }
 
-/* Bouton du cœur aligné à droite */
 .heart-button {
   background: none;
   border: none;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-/* Cœur avec ombrage et effet réaliste */
-.heart {
   width: 40px;
   height: 40px;
-  transition: transform 0.3s ease-in-out;
+  padding: 0;
+  margin: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Contour du cœur */
+.heart {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.heart-button:active .heart {
+  transform: scale(0.9);
+}
+
 .heart-outline {
   fill: none;
-  stroke: #ff4f8b; /* Rose dynamique */
+  stroke: #ff4f8b;
   stroke-width: 2;
-  transition: stroke 0.3s ease-in-out;
 }
 
-/* Remplissage du cœur avec dégradé réaliste */
 .heart-fill {
-  fill: url(#gradient); /* Dégradé pour un effet de remplissage progressif */
+  fill: url(#gradient);
   opacity: 0;
-  transition: opacity 1s ease-in-out;
-  transform: scale(1);
+  transition: opacity 0.3s ease;
+  transform-origin: center;
 }
 
-/* Animation du cœur rempli */
 .filled {
   opacity: 1;
-  animation: pulse 0.5s ease-out, glow 1.2s ease-out;
+  animation: heartBeat 0.6s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-/* Effet de pulsation doux */
-@keyframes pulse {
+@keyframes heartBeat {
   0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(0.9); }
+  75% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
-/* Glow autour du cœur pour un effet de brillance */
-@keyframes glow {
-  0% { filter: drop-shadow(0 0 5px rgba(255, 79, 139, 0.5)); }
-  50% { filter: drop-shadow(0 0 10px rgba(255, 79, 139, 0.7)); }
-  100% { filter: drop-shadow(0 0 5px rgba(255, 79, 139, 0.5)); }
-}
-
-/* Dégradé pour le remplissage du cœur (simule un remplissage dynamique) */
-svg {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* Responsivité */
 @media (min-width: 600px) {
   .film-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

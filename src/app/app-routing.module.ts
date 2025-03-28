@@ -15,7 +15,9 @@ import { MangaListComponent } from './manga-list/manga-list.component';
 import { AnimeListDetailsComponent } from './anime-list-details/anime-list-details.component';
 import { AnimeListComponent } from './anime-list/anime-list.component';
 import { MangaDetailsComponent } from './manga-details/manga-details.component';
-import {WallpapersGhibliComponent} from './wallpapers-ghibli/wallpapers-ghibli.component'
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { WallpapersGhibliComponent } from './wallpapers-ghibli/wallpapers-ghibli.component';
+
  
 
 const routes: Routes = [
@@ -30,12 +32,12 @@ const routes: Routes = [
   { path: 'all-albums/:genre', component: AllAlbumsComponent },
   { path: '', redirectTo: '/register', pathMatch: 'full' },
   {path :'movies' , component:MoviesComponent},
-  {path:'manga',component: MangaListComponent},
   { path: 'wallpapers-ghibli', component: WallpapersGhibliComponent },
+  {path:'manga',component: MangaListComponent},
   {path:'anime-actual',component: AnimeListComponent},
   { path: 'manga/:id', component: MangaDetailsComponent },
   { path: 'anime/:id', component: AnimeListDetailsComponent },
-
+  { path: 'movies/:id', component: MovieDetailsComponent }, 
   { path: 'song', component: SongComponent },
   { path: 'all-albums/:genre', component: AllAlbumsComponent },
 

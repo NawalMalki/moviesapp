@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';  // Importe le Router pour naviguer
 import { MoviesService } from '../services/movies.service';
 
 @Component({
@@ -9,10 +10,9 @@ import { MoviesService } from '../services/movies.service';
 export class MoviesComponent implements OnInit {
   
   movies: any[] = [];
-  selectedMovie: any = null; // Stocke les détails du film sélectionné
-  trailerUrl: string | null = null; // Stocke l'URL du trailer
+  favorites: any[] = [];
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService, private router: Router) {}
 
   ngOnInit(): void {
     this.moviesService.getPopularMovies().subscribe(data => {
@@ -20,23 +20,22 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-  showMovieDetails(movieId: number): void {
-    // Récupère les détails du film
-    this.moviesService.getMovieDetails(movieId).subscribe(data => {
-      this.selectedMovie = data;
-    });
-
-    // Récupère les vidéos du film et cherche le trailer
-    this.moviesService.getMovieVideos(movieId).subscribe(videoData => {
-      const trailer = videoData.results.find((video) => video.type === 'Trailer' && video.site === 'YouTube');
-      if (trailer) {
-        this.trailerUrl = `https://www.youtube.com/embed/${trailer.key}`;
-      }
-    });
+  // Fonction qui gère le clic sur la carte du film
+  goToMovieDetails(movieId: number): void {
+    // Redirige vers le détail du film sans utiliser 'routerLink' directement
+    this.router.navigate(['/movies', movieId]);
   }
 
-  closeMovieDetails(): void {
-    this.selectedMovie = null;
-    this.trailerUrl = null;
+  isFavorite(anime: any): boolean {
+    return this.favorites.some(f => f.mal_id === anime.mal_id);
+  }
+
+  getStars(score: number | string): string[] {
+    const numericScore = typeof score === 'string' ? parseFloat(score) : score;
+    if (isNaN(numericScore)) {
+      return [];
+    }
+    const starsCount = Math.round(numericScore / 2);
+    return Array(5).fill('☆').map((star, index) => index < starsCount ? '★' : '☆');
   }
 }

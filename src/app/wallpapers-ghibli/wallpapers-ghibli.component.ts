@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WallpaperService } from './wallpaper.service';
+import { WallpaperService } from '../wallpaper.service';
 
 @Component({
   selector: 'app-wallpapers-ghibli',
